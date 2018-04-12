@@ -11,6 +11,13 @@
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
+            <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
+
+                <TextBlock>Duration</TextBlock>
+
+                <TextBlock Name="Duration" Text="{Binding}" Margin="10,0,0,0"></TextBlock>
+
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
 
                     <Button Name="RecordBtn" Click="RecordBtn_Click" >Record</Button>

@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace SnoreAway.Helper
 {
-        public enum AudioEncodingFormat
+
+    public enum RecordingMode
+
+    {
+
+        Initializing,
+
+        Recording,
+
+        Stopped,
+
+    };
+    public enum AudioEncodingFormat
 
         {
 
