@@ -7,7 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Background="SteelBlue">
 
-    </Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal">
+
+                    <Button Name="RecordBtn" Click="RecordBtn_Click" >Record</Button>
+
+                    <Button Name="StopBtn" Click="StopBtn_Click" >Stop</Button>
+
+                    <Button Name="SaveBtn" Click="SaveBtn_Click" >Save</Button>
+
+                </StackPanel>
+
+
+
+            </StackPanel>
+
+        </Grid>
+    
 </Page>
