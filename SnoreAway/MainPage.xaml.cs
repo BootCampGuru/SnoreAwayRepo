@@ -32,5 +32,28 @@ namespace SnoreAway
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(SnoreLab));
         }
+
+  
+
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Profile.Profile));
+        }
+
+        private void btnHistory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSleep_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

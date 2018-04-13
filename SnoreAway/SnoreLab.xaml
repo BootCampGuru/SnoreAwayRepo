@@ -7,24 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-        <Grid Background="SteelBlue">
+        <Grid Background="SeaGreen">
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
 
             <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
 
-                <TextBlock>Duration</TextBlock>
+                <TextBlock FontSize="16">Duration</TextBlock>
 
-                <TextBlock Name="Duration" Text="{Binding}" Margin="10,0,0,0"></TextBlock>
+                <TextBlock Foreground="Yellow" FontSize="16" Name="Duration" Text="{Binding}" Margin="10,0,0,0"></TextBlock>
 
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Background="AliceBlue" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
 
-                    <Button Name="RecordBtn" Click="RecordBtn_Click" >Record</Button>
+                    <Button Height="100" Name="RecordBtn" Click="RecordBtn_Click" >Record</Button>
 
-                    <Button Name="StopBtn" Click="StopBtn_Click" >Stop</Button>
+                    <Button Height="100" Name="StopBtn" Click="StopBtn_Click" >Stop</Button>
 
-                    <Button Name="SaveBtn" Click="SaveBtn_Click" >Save</Button>
+                    <Button Height="100" Name="SaveBtn" Click="SaveBtn_Click" >Save</Button>
 
                 </StackPanel>
 

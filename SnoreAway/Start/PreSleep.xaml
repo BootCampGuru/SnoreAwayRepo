@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="SnoreAway.Start.PreSleep"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SnoreAway.Start"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="SeaGreen">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Background="Black">
+                <TextBlock FontSize="36" Text="User Profile" Foreground="Brown"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Did you Smoke today?"></TextBlock>
+                <ToggleSwitch x:Name="TglSmoker"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Did you work out today?"></TextBlock>
+                <ToggleSwitch x:Name="TglWorkOut"/>
+
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Did Drink today?"></TextBlock>
+                <ToggleSwitch x:Name="TglDrink"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="What time did you have dinner?"></TextBlock>
+                <CalendarDatePicker x:Name="CDPDinner" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Did you drink Coffee?"></TextBlock>
+                <ToggleSwitch x:Name="TglCoffee"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Did you have heavy meal?"></TextBlock>
+                <ToggleSwitch x:Name="TglMeal"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Are you sick?"></TextBlock>
+                <ToggleSwitch x:Name="TglSick"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Did you take Medicine?"></TextBlock>
+                <ToggleSwitch x:Name="TglMedicine"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnSubmit" Content="SUBMIT" Background="Navy" />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>
