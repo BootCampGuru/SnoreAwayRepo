@@ -43,17 +43,20 @@ namespace SnoreAway
 
         private void btnHistory_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(History.History));
         }
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Start.PostSleep));
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Login.Login));
         }
     }
 }

@@ -54,7 +54,7 @@
                 <ToggleSwitch x:Name="TglMedicine"/>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnSubmit" Content="SUBMIT" Background="Navy" />
+                <Button Height="60" x:Name="btnSubmit" Content="SUBMIT" Background="Azure" />
             </StackPanel>
 
         </StackPanel>

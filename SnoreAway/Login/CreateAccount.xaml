@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SnoreAway.Login.Login"
+    x:Class="SnoreAway.Login.CreateAccount"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SnoreAway.Login"
@@ -8,17 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="SeaGreen">
-
+     
         <StackPanel>
             <StackPanel>
                 <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
             </StackPanel>
-            <StackPanel>
-                <HyperlinkButton x:Name="HyperAccount" Click="HyperAccount_Click">Create New Account</HyperlinkButton>
-            </StackPanel>
             <StackPanel Background="Black">
-                <TextBlock FontSize="36" Text="Login" Foreground="Brown"/>
+                <TextBlock FontSize="36" Text="Create Account" Foreground="Brown"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock FontSize="24" Height="60"  Text="User Name" />
@@ -31,7 +28,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
-                <Button x:Name="btnSubmit" Content="SUBMIT" Foreground="Brown" Background="Green" />
+                <Button x:Name="btnSubmit" Content="CREATE" Foreground="Brown" Background="Green" />
             </StackPanel>
 
         </StackPanel>
