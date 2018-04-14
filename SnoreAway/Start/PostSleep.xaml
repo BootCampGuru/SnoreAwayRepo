@@ -20,28 +20,28 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you Wake up feeling fresh?"></TextBlock>
+                <TextBlock FontSize="36" Foreground="Orange" Text="Did you Wake up feeling fresh?"></TextBlock>
                 <ToggleSwitch x:Name="TglFresh"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="How many times did you wake up at night?"></TextBlock>
+                <TextBlock  FontSize="36" Foreground="Orange" Text="How many times did you wake up at night?"></TextBlock>
                 <TextBox x:Name="txtTimes" />
 
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you wake up on time?"></TextBlock>
+                <TextBlock  FontSize="36" Foreground="Orange" Text="Did you wake up on time?"></TextBlock>
                 <ToggleSwitch x:Name="TglWake"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you have heavy meal?"></TextBlock>
+                <TextBlock  FontSize="36" Foreground="Orange" Text="Did you have heavy meal?"></TextBlock>
                 <ToggleSwitch x:Name="TglMeal"/>
             </StackPanel>
 
             <StackPanel>
-                <Button HorizontalAlignment="Center" Click="btnSubmit_Click" Height="60" x:Name="btnSubmit" Content="NEXT" Background="Azure" />
+                <Button HorizontalAlignment="Center" Click="btnSubmit_Click" Height="60" x:Name="btnSubmit" Content="NEXT" Background="orange" />
             </StackPanel>
 
         </StackPanel>

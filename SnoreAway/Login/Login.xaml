@@ -21,12 +21,12 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Login" Foreground="Brown"/>
             </StackPanel>
             <StackPanel>
-                <TextBlock  FontSize="24" Foreground="Orange" Height="60"  Text="User Name" />
+                <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="User Name" />
                 <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtUserName"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock  FontSize="24" Foreground="Orange" Height="60"  Text="Password" />
+                <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="Password" />
                 <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtPassword"/>
 
             </StackPanel>
