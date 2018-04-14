@@ -98,7 +98,7 @@ namespace SnoreAway.Helper
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {
-                var existingaccount = conn.Query<Models.Account>("select * from Account where username =" + username + " AND password = " + password).FirstOrDefault();
+                var existingaccount = conn.Query<Models.Account>("select * from Account where username ='" + username + "' AND password = '" + password + "'").FirstOrDefault();
                 return existingaccount;
             }
         }
