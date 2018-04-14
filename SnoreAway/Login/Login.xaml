@@ -17,6 +17,9 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
             <StackPanel>
                 <HyperlinkButton x:Name="HyperAccount" Click="HyperAccount_Click">Create New Account</HyperlinkButton>
             </StackPanel>
+            <StackPanel>
+                <TextBlock x:Name="ErrorMessage" />
+            </StackPanel>
             <StackPanel Background="Black">
                 <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Login" Foreground="Brown"/>
             </StackPanel>

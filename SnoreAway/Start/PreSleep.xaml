@@ -37,20 +37,21 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 <StackPanel>
                     <TextBlock FontSize="36" Foreground="Orange" Text="What time did you have dinner?"></TextBlock>
                     <CalendarDatePicker   FontSize="36" Foreground="Red"  x:Name="CDPDinner" />
+                    <TimePicker x:Name="DinnerTime" Header="Arrival time"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange"  Text="Did you drink Coffee?"></TextBlock>
+                    <TextBlock FontSize="36" Foreground="Orange"  Text="Did you drink Coffee before bed?"></TextBlock>
                     <ToggleSwitch   FontSize="36" Foreground="Red"  x:Name="TglCoffee"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange"  Text="Did you have heavy meal?"></TextBlock>
+                    <TextBlock  FontSize="36" Foreground="Orange"  Text="Did you have heavy meal before sleep?"></TextBlock>
                     <ToggleSwitch  FontSize="36" Foreground="Red" x:Name="TglMeal"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange"  Text="Are you sick?"></TextBlock>
+                    <TextBlock  FontSize="36" Foreground="Orange"  Text="Are you in pain?"></TextBlock>
                     <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglSick"/>
                 </StackPanel>
 
