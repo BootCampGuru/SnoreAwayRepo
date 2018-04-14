@@ -33,6 +33,23 @@ namespace SnoreAway.Profile
         {
             Frame rootFrame = Window.Current.Content as Frame;
             btnBack.IsEnabled = rootFrame.CanGoBack;
+
+            //Load Profile Information
+            if(App.UserId != 0)
+            {
+                DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
+                var profile = Db_Helper.ReadProfile(App.UserId);
+                if (profile != null)
+                {
+                    txtFirstName.Text = profile.FirstName;
+                    txtLastName.Text = profile.LastName;
+                    TglSick.IsOn = profile.MedicationFlag;
+                    TglDrink.IsOn = profile.DrinkFlag;
+                    //profile.DinnerTime = tmpDinner.ToString();
+                    TglSmoker.IsOn = profile.SmokeFlag;
+                }
+
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
