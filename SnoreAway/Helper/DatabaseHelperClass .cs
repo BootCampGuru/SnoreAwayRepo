@@ -83,12 +83,33 @@ namespace SnoreAway.Helper
 
         #endregion
 
-        // Retrieve the specific contact from the database.     
-        public Models.Profile ReadContact(int contactid)
+        #region public read regions
+
+        public Models.Session ReadSession(int id)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {
-                var existingconact = conn.Query<Models.Profile>("select * from Contacts where Id =" + contactid).FirstOrDefault();
+                var existingsession = conn.Query<Models.Session>("select * from Session where id =" + id).FirstOrDefault();
+                return existingsession;
+            }
+        }
+
+        public Models.Account ReadAccount(string username, string password)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                var existingaccount = conn.Query<Models.Account>("select * from Account where username =" + username + " AND password = " + password).FirstOrDefault();
+                return existingaccount;
+            }
+        }
+        #endregion
+
+        // Retrieve the specific contact from the database.     
+        public Models.Profile ReadProfile(int contactid)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                var existingconact = conn.Query<Models.Profile>("select * from Contacts where UserId =" + contactid).FirstOrDefault();
                 return existingconact;
             }
         }
@@ -110,7 +131,7 @@ namespace SnoreAway.Helper
 
         }
         //Update existing conatct   
-        public void UpdateDetails(Models.Profile ObjContact)
+        public void UpdateProfile(Models.Profile ObjContact)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {

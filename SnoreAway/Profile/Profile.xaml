@@ -6,53 +6,63 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="SeaGreen">
-        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <StackPanel>
-                <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
+    <ScrollViewer>
+        <Grid Background="SeaGreen">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel>
+                    <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+                </StackPanel>
+                <StackPanel Background="Black">
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="Brown"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="First Name" />
+                    <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtFirstName"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="Last Name" />
+                    <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtLastName"/>
+
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock FontSize="24" Foreground="Orange"  Text="Do you Smoke?"></TextBlock>
+                    <ToggleSwitch FontSize="24" Foreground="Orange" x:Name="TglSmoker"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock FontSize="24" Foreground="Orange"  Text="Do you work out?"></TextBlock>
+                    <ToggleSwitch FontSize="24" Foreground="Orange"  x:Name="TglWorkOut"/>
+
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock FontSize="24" Foreground="Orange"  Text="Do you Drink?"></TextBlock>
+                    <ToggleSwitch FontSize="24" Foreground="Orange"  x:Name="TglDrink"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock FontSize="24" Foreground="Orange" Text="What time do you have dinner?"></TextBlock>
+                    <TimePicker x:Name="tmpDinner" Header="Dinner time"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock FontSize="24" Foreground="Orange" Text="Do you drink Coffee?"></TextBlock>
+                    <ToggleSwitch x:Name="TglCoffee"/>
+                </StackPanel>
+
+
+                <StackPanel>
+                    <TextBlock  FontSize="24" Foreground="Orange" Text="Do you take medication?"></TextBlock>
+                    <ToggleSwitch x:Name="TglSick"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button  FontSize="24" Foreground="Orange" HorizontalAlignment="Center" Height="60" x:Name="btnSubmit" Click="btnSubmit_Click" Content="SUBMIT" Background="blue" />
+                </StackPanel>
+
             </StackPanel>
-            <StackPanel Background="Black">
-                <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="Brown"/>
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock FontSize="24" Foreground="Orange"  Text="Do you Smoke?"></TextBlock>
-                <ToggleSwitch FontSize="24" Foreground="Orange" x:Name="TglSmoker"/>
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock FontSize="24" Foreground="Orange"  Text="Did you work out?"></TextBlock>
-                <ToggleSwitch FontSize="24" Foreground="Orange"  x:Name="TglWorkOut"/>
-
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock FontSize="24" Foreground="Orange"  Text="Dl you Drink?"></TextBlock>
-                <ToggleSwitch FontSize="24" Foreground="Orange"  x:Name="TglDrink"/>
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock FontSize="24" Foreground="Orange" Text="What time do you have dinner?"></TextBlock>
-                <CalendarDatePicker x:Name="CDPDinner" />
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock FontSize="24" Foreground="Orange" Text="Do you drink Coffee?"></TextBlock>
-                <ToggleSwitch x:Name="TglCoffee"/>
-            </StackPanel>
-
-
-            <StackPanel>
-                <TextBlock  FontSize="24" Foreground="Orange" Text="Do you take medication?"></TextBlock>
-                <ToggleSwitch x:Name="TglSick"/>
-            </StackPanel>
-
-            <StackPanel>
-                <Button  FontSize="24" Foreground="Orange" HorizontalAlignment="Center" Height="60" x:Name="btnSubmit" Content="SUBMIT" Background="blue" />
-            </StackPanel>
-
-        </StackPanel>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>

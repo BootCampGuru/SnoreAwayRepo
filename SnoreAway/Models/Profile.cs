@@ -11,6 +11,8 @@ namespace SnoreAway.Models
         //The Id property is marked as the Primary Key  
         [SQLite.Net.Attributes.PrimaryKey, SQLite.Net.Attributes.AutoIncrement]
         public int Id { get; set; }
+
+        public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
