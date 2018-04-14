@@ -9,8 +9,12 @@
 
     <Grid Background="SeaGreen">
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel>
+                <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
+Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+            </StackPanel>
             <StackPanel Background="Black">
-                <TextBlock FontSize="36" Text="User Profile" Foreground="Brown"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="Brown"/>
             </StackPanel>
 
             <StackPanel>
