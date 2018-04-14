@@ -50,7 +50,7 @@ namespace SnoreAway
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(Start.PostSleep));
+            rootFrame.Navigate(typeof(Start.PreSleep));
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)

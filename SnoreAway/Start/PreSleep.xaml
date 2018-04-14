@@ -7,54 +7,59 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="SeaGreen">
-        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid Background="SeaGreen" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <StackPanel>
+                <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
+Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+            </StackPanel>
+            
             <StackPanel Background="Black">
-                <TextBlock FontSize="36" Text="User Profile" Foreground="Brown"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Pre Sleep Checklist" Foreground="Brown"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you Smoke today?"></TextBlock>
-                <ToggleSwitch x:Name="TglSmoker"/>
+                <TextBlock FontSize="36" Foreground="Orange" Text="Did you Smoke today?"></TextBlock>
+                <ToggleSwitch  FontSize="36" Foreground="Red"  x:Name="TglSmoker"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you work out today?"></TextBlock>
-                <ToggleSwitch x:Name="TglWorkOut"/>
+                <TextBlock FontSize="36" Foreground="Orange"  Text="Did you work out today?"></TextBlock>
+                <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglWorkOut"/>
 
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did Drink today?"></TextBlock>
-                <ToggleSwitch x:Name="TglDrink"/>
+                <TextBlock FontSize="36" Foreground="Orange"  Text="Did Drink today?"></TextBlock>
+                <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglDrink"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="What time did you have dinner?"></TextBlock>
-                <CalendarDatePicker x:Name="CDPDinner" />
+                <TextBlock FontSize="36" Foreground="Orange" Text="What time did you have dinner?"></TextBlock>
+                <CalendarDatePicker   FontSize="36" Foreground="Red"  x:Name="CDPDinner" />
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you drink Coffee?"></TextBlock>
-                <ToggleSwitch x:Name="TglCoffee"/>
+                <TextBlock FontSize="36" Foreground="Orange"  Text="Did you drink Coffee?"></TextBlock>
+                <ToggleSwitch   FontSize="36" Foreground="Red"  x:Name="TglCoffee"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you have heavy meal?"></TextBlock>
-                <ToggleSwitch x:Name="TglMeal"/>
+                <TextBlock  FontSize="36" Foreground="Orange"  Text="Did you have heavy meal?"></TextBlock>
+                <ToggleSwitch  FontSize="36" Foreground="Red" x:Name="TglMeal"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Are you sick?"></TextBlock>
-                <ToggleSwitch x:Name="TglSick"/>
+                <TextBlock  FontSize="36" Foreground="Orange"  Text="Are you sick?"></TextBlock>
+                <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglSick"/>
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Did you take Medicine?"></TextBlock>
-                <ToggleSwitch x:Name="TglMedicine"/>
+                <TextBlock  FontSize="36" Foreground="Orange" Text="Did you take Medicine?"></TextBlock>
+                <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglMedicine"/>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnSubmit" Content="SUBMIT" Background="Navy" />
+                <Button HorizontalAlignment="Center" Click="btnSubmit_Click" Height="60" x:Name="btnSubmit" Content="NEXT" Background="Azure" />
             </StackPanel>
 
         </StackPanel>

@@ -242,5 +242,15 @@ namespace SnoreAway
                 }
             }
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

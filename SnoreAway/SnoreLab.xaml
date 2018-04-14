@@ -8,29 +8,46 @@
     mc:Ignorable="d">
 
         <Grid Background="SeaGreen">
-
+      
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel>
+                <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
+Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+            </StackPanel>
+            <StackPanel Background="Black">
+                <TextBlock HorizontalAlignment="Center" FontSize="46" Text="Sleep Away" Foreground="Brown"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Margin="20,20,20,20">
 
-            <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock FontSize="16"></TextBlock>
 
-                <TextBlock FontSize="16">Duration</TextBlock>
-
-                <TextBlock Foreground="Yellow" FontSize="16" Name="Duration" Text="{Binding}" Margin="10,0,0,0"></TextBlock>
+                <TextBlock Foreground="Black" FontSize="36" Name="Duration" Text="{Binding}" Margin="10,0,0,0"></TextBlock>
 
             </StackPanel>
-            <StackPanel Background="AliceBlue" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-
-                    <Button Height="100" Name="RecordBtn" Click="RecordBtn_Click" >Record</Button>
-
-                    <Button Height="100" Name="StopBtn" Click="StopBtn_Click" >Stop</Button>
-
-                    <Button Height="100" Name="SaveBtn" Click="SaveBtn_Click" >Save</Button>
-
+            <StackPanel Height="240" Background="Orange" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <StackPanel Height="240" Orientation="Vertical">
+                    <Button Foreground="White" Background="Brown" Width="200" Height="200" Name="RecordBtn" Click="RecordBtn_Click" >
+                    <Image Source="Assets/Microphone.png" Stretch="UniformToFill"/>
+                </Button>
+                    <TextBlock FontSize="30" HorizontalAlignment="Center" Text="Record"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Foreground="White" Background="Brown" Width="200" Height="200" Name="StopBtn" Click="StopBtn_Click" >
+                    <Image Source="Assets/Stop.png" Stretch="UniformToFill"/>
+                </Button>
+                    <TextBlock FontSize="30" HorizontalAlignment="Center" Text="Stop"/>
                 </StackPanel>
 
-
-
+                <StackPanel>
+                    <Button Foreground="White" Background="Brown" Width="200" Height="200" Name="SaveBtn" Click="SaveBtn_Click" >
+                    <Image Source="Assets/disk.png" Stretch="UniformToFill"/>
+                </Button>
+                <TextBlock FontSize="30" HorizontalAlignment="Center" Text="Save"/>
             </StackPanel>
+        </StackPanel>
+
+
+        </StackPanel>
 
         </Grid>
     

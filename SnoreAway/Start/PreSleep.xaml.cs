@@ -26,5 +26,25 @@ namespace SnoreAway.Start
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            btnBack.IsEnabled = rootFrame.CanGoBack;
+        }
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(SnoreLab));
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+
+            }
+        }
     }
 }
