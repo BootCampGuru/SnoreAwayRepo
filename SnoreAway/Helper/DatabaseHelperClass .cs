@@ -9,7 +9,7 @@ namespace SnoreAway.Helper
 {
     public class DatabaseHelperClass
     {
-        //Create Tabble   
+        //Create Table   
         public void CreateDatabase(string DB_PATH)
         {
             if (!CheckFileExists(DB_PATH).Result)
@@ -41,6 +41,8 @@ namespace SnoreAway.Helper
 
         #region Public Insertion Functions
 
+        //This functions are a good candidate for generics
+
         public Models.Account InsertAccount(Models.Account account)
         {
 
@@ -70,6 +72,29 @@ namespace SnoreAway.Helper
         }
 
         public void InsertPreSleep(Models.PreSleep sleep)
+        {
+
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                conn.RunInTransaction(() =>
+                {
+                    conn.Insert(sleep);
+                });
+            }
+        }
+
+        public void InsertSession(Models.Session sleep)
+        {
+
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                conn.RunInTransaction(() =>
+                {
+                    conn.Insert(sleep);
+                });
+            }
+        }
+        public void InsertPostSleep(Models.PostSleep sleep)
         {
 
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
@@ -121,7 +146,7 @@ namespace SnoreAway.Helper
         }
         #endregion
 
-        // Retrieve the specific contact from the database.     
+        // Retrieve the specific profile from the database.     
         public Models.Profile ReadProfile(int contactid)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
@@ -130,7 +155,47 @@ namespace SnoreAway.Helper
                 return existingconact;
             }
         }
-        public ObservableCollection<Models.Profile> ReadAllContacts()
+
+
+        // Retrieve the specific presleep from the database.     
+        public Models.PreSleep ReadPreSleep(int id)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                var existingPreSleep = conn.Query<Models.PreSleep>("select * from PreSleep where SessionId ='" + id + "'").FirstOrDefault();
+                return existingPreSleep;
+            }
+        }
+
+        // Retrieve the specific postsleep from the database.     
+        public Models.PostSleep ReadPostSleep(int id)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                var existingPostSleep = conn.Query<Models.PostSleep>("select * from PostSleep where SessionId ='" + id + "'").FirstOrDefault();
+                return existingPostSleep;
+            }
+        }
+
+
+        public ObservableCollection<Models.Session> ReadAllSessions()
+        {
+            try
+            {
+                using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+                {
+                    List<Models.Session> myCollection = conn.Table<Models.Session>().ToList<Models.Session>();
+                    ObservableCollection<Models.Session> sessionList = new ObservableCollection<Models.Session>(myCollection);
+                    return sessionList;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+        public ObservableCollection<Models.Profile> ReadAllProfiles()
         {
             try
             {
@@ -147,7 +212,85 @@ namespace SnoreAway.Helper
             }
 
         }
-        //Update existing conatct   
+
+        #region public update region
+        //Update existing Session
+
+        public void UpdateSession(Models.Session ObjContact)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+
+                var existingconact = conn.Query<Models.Profile>("select * from Session where Id =" + ObjContact.Id).FirstOrDefault();
+                if (existingconact != null)
+                {
+
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Update(ObjContact);
+                    });
+                }
+
+            }
+        }
+
+        //Update Pre Sleep
+        public void UpdatePreSleep(Models.PreSleep ObjContact)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+
+                var existingconact = conn.Query<Models.PreSleep>("select * from PreSleep where SessionId =" + ObjContact.SessionId).FirstOrDefault();
+                if (existingconact != null)
+                {
+
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Update(ObjContact);
+                    });
+                }
+
+            }
+        }
+
+        //Update Account
+        public void Account(Models.Account ObjContact)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+
+                var existingconact = conn.Query<Models.Account>("select * from Accout where username ='" + ObjContact.Id + "'" + " AND password = '" + ObjContact.Password + "'").FirstOrDefault();
+                if (existingconact != null)
+                {
+
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Update(ObjContact);
+                    });
+                }
+
+            }
+        }
+        //Update Post Sleep
+        public void UpdatePostSleep(Models.PreSleep ObjContact)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+
+                var existingconact = conn.Query<Models.PostSleep>("select * from PostSleep where SessionId =" + ObjContact.SessionId).FirstOrDefault();
+                if (existingconact != null)
+                {
+
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Update(ObjContact);
+                    });
+                }
+
+            }
+        }
+
+        //Update existing profile   
         public void UpdateProfile(Models.Profile ObjContact)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
@@ -165,8 +308,11 @@ namespace SnoreAway.Helper
 
             }
         }
-        //Delete all contactlist or delete Contacts table     
-        public void DeleteAllContact()
+
+
+        #endregion
+        //Delete all profiles     
+        public void DeleteAllProfiles()
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {
@@ -178,13 +324,13 @@ namespace SnoreAway.Helper
 
             }
         }
-        //Delete specific contact     
-        public void DeleteContact(int Id)
+        //Delete specific Profile     
+        public void DeleteProfile(int Id)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {
 
-                var existingconact = conn.Query<Models.Profile>("select * from Contacts where Id =" + Id).FirstOrDefault();
+                var existingconact = conn.Query<Models.Profile>("select * from Profile where Id =" + Id).FirstOrDefault();
                 if (existingconact != null)
                 {
                     conn.RunInTransaction(() =>

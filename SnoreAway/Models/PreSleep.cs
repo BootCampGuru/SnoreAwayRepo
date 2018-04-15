@@ -13,6 +13,8 @@ namespace SnoreAway.Models
         public int Id { get; set; }
 
         public int ProfileId { get; set; }
+
+        public int SessionId { get; set; }
         public bool SmokeFlag { get; set; }
         public bool DrinkFlag { get; set; }
 

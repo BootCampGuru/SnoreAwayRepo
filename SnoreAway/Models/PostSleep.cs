@@ -11,6 +11,8 @@ namespace SnoreAway.Models
         [SQLite.Net.Attributes.PrimaryKey, SQLite.Net.Attributes.AutoIncrement]
         public int Id { get; set; }
         public int ProfileId { get; set; }
+
+        public int SessionId { get; set; }
         public bool SleepWell { get; set; }
 
         public int WakeNumber { get; set; }
