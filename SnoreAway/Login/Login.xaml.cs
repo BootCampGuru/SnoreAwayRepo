@@ -56,13 +56,13 @@ namespace SnoreAway.Login
         {
             //Look for user name and password
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
-            if (txtUserName.Text != "" & txtPassword.Text != "")
+            if (txtUserName.Text != "" & txtPassword.Password != "")
             {
 
                 using (SHA256 shaHash = SHA256.Create())
                 {
 
-                    var password = Hashing.GetSha256Hash(shaHash, txtPassword.Text);
+                    var password = Hashing.GetSha256Hash(shaHash, txtPassword.Password);
                     var account = Db_Helper.ReadAccount(txtUserName.Text, password);
                     if (account != null)
                     {

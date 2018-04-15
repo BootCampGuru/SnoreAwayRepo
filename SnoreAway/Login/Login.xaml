@@ -30,7 +30,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
             <StackPanel>
                 <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="Password" />
-                <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtPassword"/>
+                <PasswordBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtPassword"/>
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
