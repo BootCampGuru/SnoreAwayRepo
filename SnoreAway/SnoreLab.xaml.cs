@@ -95,6 +95,7 @@ namespace SnoreAway
 
                 session.EndTime = DateTime.Now.ToString();
                 session.Duration = Duration.Text.ToString();
+                Db_Helper.UpdateSession(session);
                 InitFileSavePicker();
             }
             
@@ -197,7 +198,7 @@ namespace SnoreAway
 
             //Retrieve Session based on UserId
 
-            Models.Session session = Db_Helper.ReadSession(App.UserId);
+            Models.Session session = Db_Helper.ReadSession(App.SessionId);
             if (session != null)
             {
                 
@@ -251,10 +252,23 @@ namespace SnoreAway
 
         private async void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-             var mediaFile = await FileSave.PickSaveFileAsync();
+            // var mediaFile = await StorageFile.CreateStreamedFileFromUriAsync()
 
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
-            var session = Db_Helper.ReadSession(App.UserId);
+            var session = Db_Helper.ReadSession(App.SessionId);
+
+            Windows.Storage.StorageFolder storageFolder =
+    Windows.Storage.ApplicationData.Current.LocalFolder;
+
+            //Create file
+
+            var storageFile = await storageFolder.CreateFileAsync(session.FileLocation);
+
+            Windows.Storage.StorageFile mediaFile =
+                await storageFolder.GetFileAsync(session.FileLocation);
+
+
+         
           //  var mediaFile = StorageFile.Get(FileSave.SuggestedStartLocation + @"\" + session.FileLocation);
 
             if (mediaFile != null)
@@ -273,7 +287,16 @@ namespace SnoreAway
 
                     await FileIO.WriteBytesAsync(mediaFile, buffer);
 
-                    UpdateRecordingControls(RecordingMode.Initializing);
+                    UpdateRecordingControls(RecordingMode.Initializing);  //Update the Session End Time
+
+                    var oldsession = Db_Helper.ReadSession(App.SessionId);
+                    oldsession.EndTime = DateTime.Now.ToString();
+                    oldsession.Duration = Duration.Text.ToString();
+                    Db_Helper.UpdateSession(oldsession);
+
+                    //Update Session
+
+
 
                     //Transfer to the PostSleep location
 

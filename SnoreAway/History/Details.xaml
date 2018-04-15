@@ -16,7 +16,7 @@
                 <HyperlinkButton FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Play Recording</HyperlinkButton>
             </StackPanel>
             <StackPanel>
-                <TextBlock Foreground="Orange" FontSize="24" Text="Pre Sleep Record" />
+                <TextBlock Foreground="Orange" FontSize="24" Text="Session Record" />
                 <TextBlock FontSize="16" x:Name="StartTime"/>
                 <TextBlock FontSize="16" x:Name="EndTime" />
                 <TextBlock FontSize="16" x:Name="Duration"/>

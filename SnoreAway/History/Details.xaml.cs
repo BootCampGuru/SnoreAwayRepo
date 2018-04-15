@@ -28,14 +28,20 @@ namespace SnoreAway.History
             InitializeComponent();
         }
 
-        private void HyperAccount_Click(object sender, RoutedEventArgs e)
+        private async void HyperAccount_Click(object sender, RoutedEventArgs e)
         {
             //Open recording
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
-            var session = Db_Helper.ReadSession(App.UserId);
+            var session = Db_Helper.ReadSession(App.SessionId);
             if (session != null)
             {
-                mediaElement1.Source = new Uri(session.FileLocation);
+                Windows.Storage.StorageFolder storageFolder =
+Windows.Storage.ApplicationData.Current.LocalFolder;
+
+                Windows.Storage.StorageFile mediaFile =
+                    await storageFolder.GetFileAsync(session.FileLocation);
+
+                mediaElement1.Source = new Uri(mediaFile.Path);
                 mediaElement1.Play();
             }
 
@@ -48,7 +54,7 @@ namespace SnoreAway.History
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
             var preSleepSession = Db_Helper.ReadPreSleep(App.SessionId);
             var postSleepSession = Db_Helper.ReadPostSleep(App.SessionId);
-            var session = Db_Helper.ReadSession(App.UserId);
+            var session = Db_Helper.ReadSession(App.SessionId);
 
             if(session != null)
             {

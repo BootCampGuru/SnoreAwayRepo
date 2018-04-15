@@ -67,11 +67,13 @@ namespace SnoreAway.Start
 
             if (session.Id != 0)
             {
-
-                var preSleepSession = Db_Helper.ReadPreSleep(App.UserId);
+                App.SessionId = session.Id;
+                var preSleepSession = Db_Helper.ReadPreSleep(App.SessionId);
 
                 if (preSleepSession != null)
                 {
+                    session.FileLocation = @"Session_" + session.Id;
+                    session.CreationDate = DateTime.Now.ToString();
                     preSleepSession.CoffeeFlag = TglCoffee.IsOn;
                     preSleepSession.DrinkFlag = TglDrink.IsOn;
                     preSleepSession.HeavyMeal = TglMeal.IsOn;
@@ -79,8 +81,8 @@ namespace SnoreAway.Start
                     preSleepSession.SmokeFlag = TglSmoker.IsOn;
                     TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
                     preSleepSession.DinnerTime = tmpDinner.Time.ToString();
-            
 
+                    Db_Helper.UpdateSession(session);
                     Db_Helper.UpdatePreSleep(preSleepSession);
                 }
                 else
@@ -89,7 +91,7 @@ namespace SnoreAway.Start
                     //files will be saved in the MyMusic location
                     //but possible extension is to use the configuration file in the future
                     session.FileLocation = @"Session_" + session.Id;
-
+                    session.CreationDate = DateTime.Now.ToString();
                     //Create PreSleep
 
                     Models.PreSleep preSleep = new Models.PreSleep();
@@ -101,7 +103,7 @@ namespace SnoreAway.Start
                     TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
                     preSleep.DinnerTime = tmpDinner.Time.ToString();
                     preSleep.SessionId = session.Id;
-
+                    Db_Helper.UpdateSession(session);
                     Db_Helper.InsertPreSleep(preSleep);
                 }
             }

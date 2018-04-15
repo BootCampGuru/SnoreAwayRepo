@@ -33,9 +33,12 @@ namespace SnoreAway.Start
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
             var sleep = Db_Helper.ReadPostSleep(App.SessionId);
 
-            TglFresh.IsOn = sleep.SleepWell;
-            TglOnTime.IsOn = sleep.OnTime;
-            txtTimes.Text = sleep.WakeNumber.ToString();
+            if (sleep != null)
+            {
+                TglFresh.IsOn = sleep.SleepWell;
+                TglOnTime.IsOn = sleep.OnTime;
+                txtTimes.Text = sleep.WakeNumber.ToString();
+            }
 
             Frame rootFrame = Window.Current.Content as Frame;
             btnBack.IsEnabled = rootFrame.CanGoBack;
@@ -67,6 +70,7 @@ namespace SnoreAway.Start
 
             }
 
+          
 
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(History.Details));

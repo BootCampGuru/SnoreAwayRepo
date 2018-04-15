@@ -36,8 +36,8 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
                 <StackPanel>
                     <TextBlock FontSize="36" Foreground="Orange" Text="What time did you have dinner?"></TextBlock>
-                    <CalendarDatePicker   FontSize="36" Foreground="Red"  x:Name="CDPDinner" />
-                    <TimePicker  FontSize="36" Foreground="Orange" x:Name="tmpDinner" Header="Arrival time"/>
+                  
+                    <TimePicker  FontSize="36" Foreground="Orange" x:Name="tmpDinner" Header=""/>
                 </StackPanel>
 
                 <StackPanel>
