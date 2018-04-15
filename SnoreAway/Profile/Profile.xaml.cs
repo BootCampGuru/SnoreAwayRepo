@@ -101,7 +101,8 @@ namespace SnoreAway.Profile
                 newProfile.LastName = txtLastName.Text;
                 newProfile.MedicationFlag = TglSick.IsOn;
                 newProfile.DrinkFlag = TglDrink.IsOn;
-                newProfile.DinnerTime = tmpDinner.Time.ToString();
+                TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
+                newProfile.DinnerTime = openTime.ToString();
                 newProfile.SmokeFlag = TglSmoker.IsOn;
                 newProfile.CoffeeFlag = TglCoffee.IsOn;
                 newProfile.WorkoutFlag = TglWorkOut.IsOn;

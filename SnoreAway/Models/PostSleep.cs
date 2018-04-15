@@ -15,6 +15,7 @@ namespace SnoreAway.Models
         public int SessionId { get; set; }
         public bool SleepWell { get; set; }
 
+        public bool OnTime { get; set; }
         public int WakeNumber { get; set; }
         public string CreationDate { get; set; }
 
@@ -22,11 +23,12 @@ namespace SnoreAway.Models
         {
             //empty constructor  
         }
-        public PostSleep(int profileid, bool sleepwell, int wakenumber, string filename)
+        public PostSleep(int profileid, bool sleepwell, int wakenumber, string filename, bool ontime)
         {
             ProfileId = profileid;
             SleepWell = sleepwell;
             WakeNumber = wakenumber;
+            OnTime = ontime;
             CreationDate = DateTime.Now.ToString();
         }
 

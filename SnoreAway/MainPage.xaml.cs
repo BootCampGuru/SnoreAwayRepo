@@ -55,6 +55,8 @@ namespace SnoreAway
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
+            //Reset Session, so user can create a new session
+            App.SessionId = 0;
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(Start.PreSleep));
         }

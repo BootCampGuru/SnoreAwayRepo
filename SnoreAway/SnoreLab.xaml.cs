@@ -86,7 +86,18 @@ namespace SnoreAway
 
             DishTimer.Stop();
 
-            InitFileSavePicker();
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+
+
+            var session = Db_Helper.ReadSession(App.UserId);
+            if(session != null)
+            {
+
+                session.EndTime = DateTime.Now.ToString();
+                session.Duration = Duration.Text.ToString();
+                InitFileSavePicker();
+            }
+            
 
         }
         private async Task InitMediaCapture()
@@ -180,7 +191,28 @@ namespace SnoreAway
 
             UpdateRecordingControls(RecordingMode.Recording);
 
-            DishTimer.Start();
+            //Update Session
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+
+
+            //Retrieve Session based on UserId
+
+            Models.Session session = Db_Helper.ReadSession(App.UserId);
+            if (session != null)
+            {
+                
+                session.StartTime = DateTime.Now.ToString();
+
+                Db_Helper.UpdateSession(session);
+
+
+                DishTimer.Start();
+            }
+            else
+            {
+                MessageDialog messageDialog = new MessageDialog("Unable to start recording");
+                await messageDialog.ShowAsync();
+            }
         }
 
         private async void MediaCaptureOnRecordLimitationExceeded(MediaCapture sender)
@@ -219,8 +251,11 @@ namespace SnoreAway
 
         private async void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            var mediaFile = await FileSave.PickSaveFileAsync();
+             var mediaFile = await FileSave.PickSaveFileAsync();
 
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
+            var session = Db_Helper.ReadSession(App.UserId);
+          //  var mediaFile = StorageFile.Get(FileSave.SuggestedStartLocation + @"\" + session.FileLocation);
 
             if (mediaFile != null)
 
@@ -239,6 +274,11 @@ namespace SnoreAway
                     await FileIO.WriteBytesAsync(mediaFile, buffer);
 
                     UpdateRecordingControls(RecordingMode.Initializing);
+
+                    //Transfer to the PostSleep location
+
+                    Frame rootFrame = Window.Current.Content as Frame;
+                    rootFrame.Navigate(typeof(Start.PostSleep));
 
                 }
             }

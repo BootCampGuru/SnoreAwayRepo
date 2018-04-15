@@ -18,7 +18,9 @@ namespace SnoreAway.Models
         
         public string StartTime { get; set;}
 
-        public string EndTime { get; set; }
+        public string EndTime { get; set;} 
+
+            public string Duration { get; set; }
 
         public string CreationDate { get; set; }
         public Session()

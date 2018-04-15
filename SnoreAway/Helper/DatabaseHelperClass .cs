@@ -71,7 +71,7 @@ namespace SnoreAway.Helper
             }
         }
 
-        public void InsertPreSleep(Models.PreSleep sleep)
+        public Models.PreSleep InsertPreSleep(Models.PreSleep sleep)
         {
 
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
@@ -80,10 +80,12 @@ namespace SnoreAway.Helper
                 {
                     conn.Insert(sleep);
                 });
+
+                return sleep;
             }
         }
 
-        public void InsertSession(Models.Session sleep)
+        public Models.Session InsertSession(Models.Session sleep)
         {
 
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
@@ -92,6 +94,8 @@ namespace SnoreAway.Helper
                 {
                     conn.Insert(sleep);
                 });
+
+                return sleep;
             }
         }
         public void InsertPostSleep(Models.PostSleep sleep)
@@ -272,7 +276,7 @@ namespace SnoreAway.Helper
             }
         }
         //Update Post Sleep
-        public void UpdatePostSleep(Models.PreSleep ObjContact)
+        public void UpdatePostSleep(Models.PostSleep ObjContact)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {

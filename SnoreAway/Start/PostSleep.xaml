@@ -32,7 +32,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
                 <StackPanel>
                     <TextBlock  FontSize="36" Foreground="Orange" Text="Did you wake up on time?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Orange"  x:Name="TglWake"/>
+                    <ToggleSwitch FontSize="36" Foreground="Orange"  x:Name="TglOnTime"/>
                 </StackPanel>
 
 

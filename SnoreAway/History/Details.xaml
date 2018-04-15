@@ -6,8 +6,39 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <ScrollViewer>
+        <Grid VerticalAlignment="Top">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Background="SeaShell" Orientation="Vertical">
+                <StackPanel>
+                <MediaElement Height="120" Margin="10,10,108,0"  Name="mediaElement1" VerticalAlignment="Top" />
+            </StackPanel>
+            <StackPanel>
+                <HyperlinkButton FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Play Recording</HyperlinkButton>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Foreground="Orange" FontSize="24" Text="Pre Sleep Record" />
+                <TextBlock FontSize="16" x:Name="StartTime"/>
+                <TextBlock FontSize="16" x:Name="EndTime" />
+                <TextBlock FontSize="16" x:Name="Duration"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Foreground="Orange" FontSize="24" Text="Pre Sleep Record" />
+                <TextBlock FontSize="16" x:Name="Workout"/>
+                <TextBlock FontSize="16" x:Name="Drink" />
+                <TextBlock FontSize="16" x:Name="Coffee"/>
+                <TextBlock FontSize="16" x:Name="Smoke" />
+                <TextBlock FontSize="16" x:Name="Medicine" />
+                <TextBlock FontSize="16" x:Name="LargeMeal" />
+                <TextBlock FontSize="16" x:Name="DinnerTime" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Foreground="Orange" FontSize="24" Text="Post Sleep Record" />
+                <TextBlock FontSize="16" x:Name="SleptWell" />
+                <TextBlock FontSize="16" x:Name="FeltFresh" />
+                <TextBlock FontSize="16" x:Name="WokeUp" />
+            </StackPanel>
+            </StackPanel>
+           
     </Grid>
+    </ScrollViewer>
 </Page>

@@ -37,7 +37,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 <StackPanel>
                     <TextBlock FontSize="36" Foreground="Orange" Text="What time did you have dinner?"></TextBlock>
                     <CalendarDatePicker   FontSize="36" Foreground="Red"  x:Name="CDPDinner" />
-                    <TimePicker x:Name="DinnerTime" Header="Arrival time"/>
+                    <TimePicker  FontSize="36" Foreground="Orange" x:Name="tmpDinner" Header="Arrival time"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -60,7 +60,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                     <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglMedicine"/>
                 </StackPanel>
                 <StackPanel>
-                    <Button FontSize="24" HorizontalAlignment="Center" Click="btnSubmit_Click" Height="60" Width="100" x:Name="btnSubmit" Content="NEXT" Foreground="Black" Background="Orange" />
+                    <Button FontSize="24" HorizontalAlignment="Center" Click="btnSubmit_ClickAsync" Height="60" Width="100" x:Name="btnSubmit" Content="NEXT" Foreground="Black" Background="Orange" />
                 </StackPanel>
 
             </StackPanel>
