@@ -27,7 +27,7 @@ namespace SnoreAway
     {
 
         public static int UserId = 0;
-        public static string DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "SnoreAwayManager1.sqlite"));
+        public static string DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "SnoreAwayManager2.sqlite"));
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -37,7 +37,7 @@ namespace SnoreAway
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            if (!CheckFileExists("SnoreAwayManager1.sqlite").Result)
+            if (!CheckFileExists("SnoreAwayManager2.sqlite").Result)
             {
                 using (var db = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), DB_PATH))
                 {

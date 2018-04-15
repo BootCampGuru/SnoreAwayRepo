@@ -15,7 +15,7 @@
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
             </StackPanel>
             <StackPanel>
-                <HyperlinkButton x:Name="HyperAccount" Click="HyperAccount_Click">Create New Account</HyperlinkButton>
+                <HyperlinkButton FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Create New Account</HyperlinkButton>
             </StackPanel>
             <StackPanel>
                 <TextBlock x:Name="ErrorMessage" />
@@ -34,7 +34,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
-                <Button BorderBrush="LightGray" Click="btnSubmit_Click"  Height="40" x:Name="btnSubmit" Content="LOG IN" Foreground="White" Background="Black" />
+                <Button BorderBrush="LightGray" Click="btnSubmit_Click" Width="100"  Height="40" x:Name="btnSubmit" Content="LOG IN" Foreground="White" Background="Navy" />
             </StackPanel>
 
         </StackPanel>

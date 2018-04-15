@@ -45,7 +45,7 @@
 
                 <StackPanel>
                     <TextBlock FontSize="24" Foreground="Orange" Text="What time do you have dinner?"></TextBlock>
-                    <TimePicker x:Name="tmpDinner" Header="Dinner time"/>
+                    <TimePicker  FontSize="24" Foreground="Orange" x:Name="tmpDinner" Header="Dinner time"/>
                 </StackPanel>
 
                 <StackPanel>

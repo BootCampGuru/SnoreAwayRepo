@@ -44,8 +44,15 @@ namespace SnoreAway.Profile
                     txtLastName.Text = profile.LastName;
                     TglSick.IsOn = profile.MedicationFlag;
                     TglDrink.IsOn = profile.DrinkFlag;
-                    //profile.DinnerTime = tmpDinner.ToString();
+                    if (profile.DinnerTime != null)
+                    {
+                        var dinner = Convert.ToDateTime(profile.DinnerTime);
+                        TimeSpan openTime = new TimeSpan(dinner.Hour, dinner.Minute, dinner.Second);
+                    }
+                   
                     TglSmoker.IsOn = profile.SmokeFlag;
+                    TglCoffee.IsOn = profile.CoffeeFlag;
+                    TglWorkOut.IsOn = profile.WorkoutFlag;
                 }
 
             }
@@ -71,12 +78,16 @@ namespace SnoreAway.Profile
                 profile.FirstName = txtFirstName.Text;
                 profile.LastName = txtLastName.Text;
                 profile.MedicationFlag = TglSick.IsOn;
+                profile.CoffeeFlag = TglCoffee.IsOn;
                 profile.DrinkFlag = TglDrink.IsOn;
-                profile.DinnerTime = tmpDinner.ToString();
+                profile.WorkoutFlag = TglWorkOut.IsOn;
                 profile.SmokeFlag = TglSmoker.IsOn;
 
-                Db_Helper.UpdateProfile(profile);
+                TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
+                profile.DinnerTime = openTime.ToString();
 
+                Db_Helper.UpdateProfile(profile);
+            
                 MessageDialog messageDialog = new MessageDialog("Profile Updated");
                 await messageDialog.ShowAsync();
 
@@ -90,8 +101,10 @@ namespace SnoreAway.Profile
                 newProfile.LastName = txtLastName.Text;
                 newProfile.MedicationFlag = TglSick.IsOn;
                 newProfile.DrinkFlag = TglDrink.IsOn;
-                newProfile.DinnerTime = tmpDinner.ToString();
+                newProfile.DinnerTime = tmpDinner.Time.ToString();
                 newProfile.SmokeFlag = TglSmoker.IsOn;
+                newProfile.CoffeeFlag = TglCoffee.IsOn;
+                newProfile.WorkoutFlag = TglWorkOut.IsOn;
 
                 Db_Helper.Insert(newProfile);
 

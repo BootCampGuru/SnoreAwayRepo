@@ -21,19 +21,24 @@ namespace SnoreAway.Models
         public bool DrinkFlag { get; set; }
         public bool MedicationFlag { get; set; }
 
+        public bool WorkoutFlag { get; set; }
         public string DinnerTime { get; set; }
+
+        public bool CoffeeFlag { get; set; }
         public string CreationDate { get; set; }
         public Profile()
         {
             //empty constructor  
         }
-        public Profile(string firstname, string lastname,bool smokeflag,bool drinkflag,bool medicationflag,string dinnertime)
+        public Profile(string firstname, string lastname,bool smokeflag,bool drinkflag,bool medicationflag,string dinnertime, bool coffeeflag, bool workoutflag)
         {
             FirstName = firstname;
             LastName = lastname;
             SmokeFlag = smokeflag;
             DrinkFlag = drinkflag;
             MedicationFlag = medicationflag;
+            CoffeeFlag = coffeeflag;
+            WorkoutFlag = workoutflag;
             DinnerTime = dinnertime;
             CreationDate = DateTime.Now.ToString();
         }

@@ -153,7 +153,7 @@ namespace SnoreAway.Helper
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
             {
 
-                var existingconact = conn.Query<Models.Profile>("select * from Contacts where Id =" + ObjContact.Id).FirstOrDefault();
+                var existingconact = conn.Query<Models.Profile>("select * from Profile where Id =" + ObjContact.Id).FirstOrDefault();
                 if (existingconact != null)
                 {
 

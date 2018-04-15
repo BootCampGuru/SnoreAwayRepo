@@ -33,7 +33,13 @@ namespace SnoreAway
             rootFrame.Navigate(typeof(SnoreLab));
         }
 
-  
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if(App.UserId != 0)
+            {
+                Login.IsEnabled = false;
+            }
+        }
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
