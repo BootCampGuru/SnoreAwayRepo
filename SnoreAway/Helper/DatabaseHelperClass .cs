@@ -93,7 +93,24 @@ namespace SnoreAway.Helper
                 return existingsession;
             }
         }
+        
+        public bool HasAccontCreated(string username)
+        {
+            bool hasAccount = false;
 
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+                var existingAccount = conn.Query<Models.Account>("select * from Account where username ='" + username + "'").FirstOrDefault();
+               
+                if(existingAccount != null)
+                {
+                    hasAccount = true;
+                }
+
+                return hasAccount;
+            }
+
+        }
         public Models.Account ReadAccount(string username, string password)
         {
             using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))

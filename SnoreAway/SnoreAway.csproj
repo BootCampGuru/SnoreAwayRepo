@@ -146,6 +146,7 @@
   <ItemGroup>
     <Content Include="Assets\disk.png" />
     <Content Include="Assets\history.png" />
+    <Content Include="Assets\Home.png" />
     <Content Include="Assets\login.png" />
     <Content Include="Assets\microphone.png" />
     <Content Include="Assets\Profile.png" />

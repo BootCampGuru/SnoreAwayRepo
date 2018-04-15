@@ -31,8 +31,7 @@ namespace SnoreAway.Profile
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-            btnBack.IsEnabled = rootFrame.CanGoBack;
+          
 
             //Load Profile Information
             if(App.UserId != 0)
@@ -52,13 +51,10 @@ namespace SnoreAway.Profile
             }
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            if (this.Frame.CanGoBack)
-            {
-                this.Frame.GoBack();
-
-            }
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
         }
 
         private async void btnSubmit_Click(object sender, RoutedEventArgs e)

@@ -49,6 +49,16 @@ namespace SnoreAway.Login
         private async void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+
+            //Look up user, if exists notify user
+
+              if(Db_Helper.HasAccontCreated(txtUserName.Text))
+            {
+                MessageDialog messageDialog = new MessageDialog("Account exists! Please log in, click on the back button");//Text should not be empty    
+                await messageDialog.ShowAsync();
+                return;
+            }
+
             if (txtUserName.Text != "" & txtPassword.Text != "")
             {
 

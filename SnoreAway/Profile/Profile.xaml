@@ -9,9 +9,10 @@
     <ScrollViewer>
         <Grid Background="SeaGreen">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel>
-                    <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Width="200" Height="200" Name="StopBtn" Click="btnHome_Click" >
+                        <Image Source="Assets/Home.png" Stretch="UniformToFill"/>
+                    </Button>
                 </StackPanel>
                 <StackPanel Background="Black">
                     <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="Brown"/>
