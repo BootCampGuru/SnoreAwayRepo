@@ -48,7 +48,10 @@ namespace SnoreAway.Start
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (txtTimes.Text == "")
+            {
+                txtTimes.Text = "0";
+            }
             Models.PostSleep postSleep = new Models.PostSleep();
             postSleep.SessionId = App.SessionId;
             postSleep.ProfileId = App.UserId;

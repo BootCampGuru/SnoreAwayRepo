@@ -67,7 +67,7 @@ namespace SnoreAway.Login
                     if (account != null)
                     {
                         App.UserId = account.Id;
-                        Frame.Navigate(typeof(Profile.Profile));//after adding new user redirect to profile page   
+                        Frame.Navigate(typeof(MainPage));//after adding new user redirect to profile page   
                     }
                     else
                     {

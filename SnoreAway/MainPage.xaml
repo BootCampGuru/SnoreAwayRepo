@@ -16,22 +16,39 @@
 
 
             <StackPanel Orientation="Horizontal">
-                <Button Click="Login_Click" x:Name="Login"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
+                <StackPanel Orientation="Vertical">
+                    <Button Click="Login_Click" x:Name="Login"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
                     <Image Source="Assets/login.png" Stretch="UniformToFill"/>
                 </Button>
-                <Button x:Name="btnProfile"  Click="btnProfile_Click"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
-                    <Image Source="Assets/profile.png" Stretch="UniformToFill"/>
-                </Button>
+                    <TextBlock HorizontalAlignment="Center" x:Name="txtLogin" Foreground="Orange" FontSize="30" Text="Log In"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="btnLogout"  Click="btnLogout_Click"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
+                        <Image Source="Assets/logout.png" Stretch="UniformToFill"/>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center"  x:Name="txtLogout" Foreground="Orange" FontSize="30" Text="Log Out"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="btnProfile"  Click="btnProfile_Click"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
+                        <Image Source="Assets/profile.png" Stretch="UniformToFill"/>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center"  x:Name="txtProfile" Foreground="Orange" FontSize="30" Text="Profile"/>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-
-                <Button  Click="btnSleep_Click" x:Name="btnSleep"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
-                    <Image Source="Assets/sleep.png" Stretch="UniformToFill"/>
-                </Button>
-                <Button  Click="btnHistory_Click" x:Name="btnHistory"   Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" BorderThickness="0">
-                    <Image Source="Assets/history.png" Stretch="UniformToFill"/>
-                </Button>
+                <StackPanel Orientation="Vertical">
+                    <Button  Click="btnSleep_Click" x:Name="btnSleep"  Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
+                        <Image Source="Assets/sleep.png" Stretch="UniformToFill"/>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center"  x:Name="txtSession" Foreground="Orange" FontSize="30" Text="Session"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button  Click="btnHistory_Click" x:Name="btnHistory"   Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" BorderThickness="0">
+                        <Image Source="Assets/history.png" Stretch="UniformToFill"/>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center"  x:Name="txtResults" Foreground="Orange" FontSize="30" Text="Results"/>
+                </StackPanel>
             </StackPanel>
 
         </StackPanel>

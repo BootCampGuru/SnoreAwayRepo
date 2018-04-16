@@ -8,6 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <ListView Margin="10" Name="lvDataBinding">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text=" Session Id: " />
+                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                        <TextBlock Text="Creation Date" />
+                        <TextBlock Text="{Binding CreationDate}"  />
+                        
+                        <TextBlock Text="Start Date: " />
+                        <TextBlock Text="{Binding StartTime}" FontWeight="Bold" />
+                        <TextBlock Text="End Date"/>
+                        <TextBlock Text="{Binding EndTime}"  />
+                        <TextBlock Text="Duration" />
+                        <TextBlock Text="{Binding EndTime}" TextDecorations="Underline" Foreground="Blue"  />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

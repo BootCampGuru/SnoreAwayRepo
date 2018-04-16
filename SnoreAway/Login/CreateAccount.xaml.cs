@@ -68,7 +68,7 @@ namespace SnoreAway.Login
                     var password = Hashing.GetSha256Hash(shaHash, txtPassword.Password);
                     var account = Db_Helper.InsertAccount(new Models.Account(txtUserName.Text,  password));
                     App.UserId = account.Id;
-                    Frame.Navigate(typeof(Profile.Profile));//after adding new user redirect to profile page   
+                    Frame.Navigate(typeof(MainPage));//after adding new user redirect to profile page   
 
                 }
                    

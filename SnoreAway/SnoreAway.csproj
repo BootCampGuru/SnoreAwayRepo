@@ -148,9 +148,11 @@
     <Content Include="Assets\history.png" />
     <Content Include="Assets\Home.png" />
     <Content Include="Assets\login.png" />
+    <Content Include="Assets\logout.png" />
     <Content Include="Assets\microphone.png" />
     <Content Include="Assets\Profile.png" />
     <Content Include="Assets\sleep.png" />
+    <Content Include="Assets\snoring.png" />
     <Content Include="Assets\stop.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

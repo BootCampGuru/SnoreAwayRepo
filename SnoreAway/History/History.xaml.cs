@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnoreAway.Helper;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,7 +23,15 @@ namespace SnoreAway.History
     /// </summary>
     public sealed partial class History : Page
     {
-        public History()
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+            var preSleepSession = Db_Helper.ReadAllSessions();
+
+            lvDataBinding.ItemsSource = preSleepSession;
+        }
+            public History()
         {
             this.InitializeComponent();
         }

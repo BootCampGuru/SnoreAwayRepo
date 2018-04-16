@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -37,7 +37,30 @@ namespace SnoreAway
         {
             if(App.UserId != 0)
             {
-                Login.IsEnabled = false;
+                Login.Visibility = Visibility.Collapsed;
+                txtLogin.Visibility = Visibility.Collapsed;
+                txtSession.Visibility = Visibility.Visible;
+                btnSleep.Visibility = Visibility.Visible;
+                txtLogout.Visibility = Visibility.Visible;
+                btnLogout.Visibility = Visibility.Visible;
+                txtResults.Visibility = Visibility.Visible;
+                btnHistory.Visibility = Visibility.Visible;
+                txtProfile.Visibility = Visibility.Visible;
+                btnProfile.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+                Login.Visibility = Visibility.Visible;
+                txtLogout.Visibility = Visibility.Visible;
+                btnLogout.Visibility = Visibility.Collapsed;
+                btnProfile.Visibility = Visibility.Collapsed;
+                btnSleep.Visibility = Visibility.Collapsed;
+                btnHistory.Visibility = Visibility.Collapsed;
+                txtProfile.Visibility = Visibility.Collapsed;
+                txtResults.Visibility = Visibility.Collapsed;
+                txtLogout.Visibility = Visibility.Collapsed;
+                txtSession.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -65,6 +88,12 @@ namespace SnoreAway
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(Login.Login));
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Login.Logout));
         }
     }
 }

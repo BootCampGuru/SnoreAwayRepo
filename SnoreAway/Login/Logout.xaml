@@ -7,7 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid  Background="SeaGreen">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
+            <TextBlock HorizontalAlignment="Center" Foreground="Orange" FontSize="36" Text="Thank you for using Snore Away" />
+
+            <Button  x:Name="Login"  Height="400" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Padding="0" BorderThickness="0">
+                <Image Height="400" Source="/Assets/snoring.png" Stretch="UniformToFill"/>
+                
+           
+            </Button>
+            <StackPanel>
+                <HyperlinkButton Foreground="Red" FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Log in</HyperlinkButton>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
