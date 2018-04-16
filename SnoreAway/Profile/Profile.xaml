@@ -9,7 +9,7 @@
     <ScrollViewer>
         <Grid Background="SeaGreen">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel>
+                <StackPanel Background="CornflowerBlue">
                     <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
                         <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
                     </Button>

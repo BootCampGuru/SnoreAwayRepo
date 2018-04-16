@@ -28,6 +28,12 @@ namespace SnoreAway.History
             InitializeComponent();
         }
 
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
+        }
+
         private async void HyperAccount_Click(object sender, RoutedEventArgs e)
         {
             //Open recording
@@ -58,9 +64,9 @@ Windows.Storage.ApplicationData.Current.LocalFolder;
 
             if(session != null)
             {
-                StartTime.Text = session.StartTime;
-                EndTime.Text = session.EndTime;
-                Duration.Text = session.Duration;
+                StartTime.Text = session.StartTime != null ? session.StartTime : "";
+                EndTime.Text = session.EndTime != null ? session.EndTime : "";
+                Duration.Text = session.Duration != null ? session.Duration : "";
             }
 
 

@@ -23,17 +23,68 @@ namespace SnoreAway.History
     /// </summary>
     public sealed partial class History : Page
     {
-
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
+        }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
-            var preSleepSession = Db_Helper.ReadAllSessions();
+            var preSleepSession = Db_Helper.ReadAllSessions(App.UserId);
 
             lvDataBinding.ItemsSource = preSleepSession;
         }
             public History()
         {
             this.InitializeComponent();
+        }
+
+        private void lnkEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var value = sender as HyperlinkButton;
+            App.SessionId = Convert.ToInt16(value.CommandParameter.ToString());
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Start.PreSleep));
+        }
+
+        private void lnkDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var value = sender as HyperlinkButton;
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
+            Db_Helper.DeleteSession(Convert.ToInt16(value.CommandParameter.ToString()));
+      
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(History));
+        }
+
+        private void lnkShare_Click(object sender, RoutedEventArgs e)
+        {
+            var value = sender as HyperlinkButton;
+            App.SessionId = Convert.ToInt16(value.CommandParameter.ToString());
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Share));
+        }
+
+        private void lvDataBinding_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var test = sender;
+        }
+
+        private void lnkDetails_Click(object sender, RoutedEventArgs e)
+        {
+            var value = sender as HyperlinkButton;
+
+            App.SessionId = Convert.ToInt16(value.CommandParameter.ToString());
+
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Details));
+        }
+
+        private void lvDataBinding_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var itemClicked = e.ClickedItem;
+
         }
     }
 }

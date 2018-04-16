@@ -10,12 +10,21 @@
         <Grid Background="SeaGreen">
       
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
-            <StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <StackPanel>
                 <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
             </StackPanel>
+            
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Background="CornflowerBlue">
+                    <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
+                        <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
+                    </Button>
+                </StackPanel>
+        
+        </StackPanel>
             <StackPanel Background="Black">
-                <TextBlock HorizontalAlignment="Center" FontSize="46" Text="Sleep Away" Foreground="Brown"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="46" Text="Sleep Away" Foreground="White"/>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" Margin="20,20,20,20">
 

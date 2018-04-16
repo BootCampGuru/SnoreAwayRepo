@@ -11,7 +11,7 @@
 
         <StackPanel Background="Black" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Background="Black">
-                <TextBlock HorizontalAlignment="Center" FontSize="36" Text="SNORE AWAY" Foreground="Brown"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="36" Text="SNORE AWAY" Foreground="White"/>
             </StackPanel>
 
 

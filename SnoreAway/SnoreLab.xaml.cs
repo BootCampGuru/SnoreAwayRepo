@@ -49,6 +49,14 @@ namespace SnoreAway
         {
             Frame rootFrame = Window.Current.Content as Frame;
             btnBack.IsEnabled = rootFrame.CanGoBack;
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+            var session = Db_Helper.ReadSession(App.UserId);
+
+            if(session != null)
+            {
+                Duration.Text = session.Duration;
+            }
+
             await InitMediaCapture();
             UpdateRecordingControls(RecordingMode.Initializing);
             InitTimer();
@@ -322,6 +330,13 @@ namespace SnoreAway
 
             }
         }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
+        }
+
 
 
     }

@@ -6,26 +6,60 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <ScrollViewer>
+        <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Background="CornflowerBlue">
+                <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
+                    <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
+                </Button>
+            </StackPanel>
+                <ListView SelectedItem ="{Binding Id}"  IsItemClickEnabled="True" ItemClick="lvDataBinding_ItemClick"  Grid.Row="1"  Margin="10" Name="lvDataBinding" SelectionChanged="lvDataBinding_SelectionChanged">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Background="gray" Orientation="Horizontal">
+                            <TextBlock Width="50" FontSize="36" Foreground="Black" Text="ID" />
+                           
+                            <TextBlock Width="400" FontSize="36" Foreground="Black" Text="Start Date" />
+                            <TextBlock Width="400" FontSize="36" Foreground="Black" Text="End Date"/>
+                                <TextBlock Width="200" Text="" />
+                                <TextBlock Width="200" Text="" />
+                             <TextBlock Width="200" Text="" />
+                                <TextBlock Width="200" Text="" />
+                            </StackPanel>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Margin="10" Name="lvDataBinding">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text=" Session Id: " />
-                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
-                        <TextBlock Text="Creation Date" />
-                        <TextBlock Text="{Binding CreationDate}"  />
-                        
-                        <TextBlock Text="Start Date: " />
-                        <TextBlock Text="{Binding StartTime}" FontWeight="Bold" />
-                        <TextBlock Text="End Date"/>
-                        <TextBlock Text="{Binding EndTime}"  />
-                        <TextBlock Text="Duration" />
-                        <TextBlock Text="{Binding EndTime}" TextDecorations="Underline" Foreground="Blue"  />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="20"  Orientation="Horizontal">
+
+                                <TextBlock  Width="50" FontSize="30" Foreground="Black" Text="{Binding Id}"  />
+
+                                <TextBlock  Width="400" FontSize="30" Foreground="Black" Text="{Binding StartTime}" />
+
+                                <TextBlock  Width="400"  FontSize="30" Foreground="Black" Text="{Binding EndTime}"  />
+
+                                <StackPanel>
+                                    <HyperlinkButton CommandParameter="{Binding Id}" FontSize="24" x:Name="lnkDetails" Click="lnkDetails_Click" >Details</HyperlinkButton>
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <HyperlinkButton CommandParameter="{Binding Id}" FontSize="24" x:Name="lnkEdit" Click="lnkEdit_Click">Edit</HyperlinkButton>
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <HyperlinkButton CommandParameter="{Binding Id}"  FontSize="24" x:Name="lnkDelete" Click="lnkDelete_Click">Delete</HyperlinkButton>
+                                </StackPanel>
+
+                                <ListViewItem>
+                                    <HyperlinkButton CommandParameter="{Binding Id}"  FontSize="24" x:Name="lnkShare" Click="lnkShare_Click">Share</HyperlinkButton>
+                                </ListViewItem>
+                            </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
+    </ScrollViewer>
 </Page>

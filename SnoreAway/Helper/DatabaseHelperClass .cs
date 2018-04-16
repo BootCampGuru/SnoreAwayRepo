@@ -182,14 +182,15 @@ namespace SnoreAway.Helper
         }
 
 
-        public ObservableCollection<Models.Session> ReadAllSessions()
+        public ObservableCollection<Models.Session> ReadAllSessions(int id)
         {
             try
             {
                 using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
                 {
-                    List<Models.Session> myCollection = conn.Table<Models.Session>().ToList<Models.Session>();
-                    ObservableCollection<Models.Session> sessionList = new ObservableCollection<Models.Session>(myCollection);
+                    var allSessions = conn.Query<Models.Session>("select * from Session where ProfileId ='" + id + "'").ToList<Models.Session>();
+                   // List<Models.Session> myCollection = conn.Table<Models.Session>().ToList<Models.Session>();
+                    ObservableCollection<Models.Session> sessionList = new ObservableCollection<Models.Session>(allSessions);
                     return sessionList;
                 }
             }
@@ -340,6 +341,41 @@ namespace SnoreAway.Helper
                     conn.RunInTransaction(() =>
                     {
                         conn.Delete(existingconact);
+                    });
+                }
+            }
+        }
+
+        public void DeleteSession(int Id)
+        {
+            using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), App.DB_PATH))
+            {
+
+                var existingpresleep = conn.Query<Models.PreSleep>("select * from PreSleep where SessionId =" + Id).FirstOrDefault();
+                if (existingpresleep != null)
+                {
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Delete(existingpresleep);
+                    });
+                }
+
+                var existingpostsleep = conn.Query<Models.PostSleep>("select * from PostSleep where SessionId =" + Id).FirstOrDefault();
+                if (existingpostsleep != null)
+                {
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Delete(existingpostsleep);
+                    });
+                }
+
+
+                var existingsession = conn.Query<Models.Session>("select * from Session where Id =" + Id).FirstOrDefault();
+                if (existingsession != null)
+                {
+                    conn.RunInTransaction(() =>
+                    {
+                        conn.Delete(existingsession);
                     });
                 }
             }

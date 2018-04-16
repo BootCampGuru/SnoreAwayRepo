@@ -105,6 +105,9 @@
     <Compile Include="History\History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
     </Compile>
+    <Compile Include="History\Share.xaml.cs">
+      <DependentUpon>Share.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login\CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>
     </Compile>
@@ -144,13 +147,16 @@
     <None Include="SnoreAway_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Delete.png" />
     <Content Include="Assets\disk.png" />
+    <Content Include="Assets\edit.png" />
     <Content Include="Assets\history.png" />
     <Content Include="Assets\Home.png" />
     <Content Include="Assets\login.png" />
     <Content Include="Assets\logout.png" />
     <Content Include="Assets\microphone.png" />
     <Content Include="Assets\Profile.png" />
+    <Content Include="Assets\Share.png" />
     <Content Include="Assets\sleep.png" />
     <Content Include="Assets\snoring.png" />
     <Content Include="Assets\stop.png" />
@@ -173,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="History\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History\Share.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

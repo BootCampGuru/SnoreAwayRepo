@@ -9,6 +9,12 @@
     <ScrollViewer>
         <Grid VerticalAlignment="Top">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Background="SeaShell" Orientation="Vertical">
+
+                <StackPanel Background="CornflowerBlue">
+                    <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
+                        <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
+                    </Button>
+                </StackPanel>
                 <StackPanel>
                 <MediaElement Height="120" Margin="10,10,108,0"  Name="mediaElement1" VerticalAlignment="Top" />
             </StackPanel>
