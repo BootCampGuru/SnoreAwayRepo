@@ -22,6 +22,8 @@ namespace SnoreAway.Models
 
         public bool CoffeeFlag { get; set; }
 
+        public bool MedicineFlag { get; set; }
+
         public string DinnerTime { get; set; }
   
         public bool HeavyMeal { get; set; }
@@ -33,7 +35,7 @@ namespace SnoreAway.Models
         {
             //empty constructor  
         }
-        public PreSleep(string profildid, bool smokeflag, bool drinkflag, bool coffeeflag, string dinnertime, bool heavymeal, bool pain)
+        public PreSleep(string profildid, bool smokeflag, bool drinkflag, bool coffeeflag, string dinnertime, bool heavymeal, bool pain, bool medicineflag)
         {
             ProfileId = ProfileId;
             SmokeFlag = smokeflag;
@@ -41,6 +43,7 @@ namespace SnoreAway.Models
             CoffeeFlag = coffeeflag;
             DinnerTime = dinnertime;
             HeavyMeal = heavymeal;
+            MedicineFlag = medicineflag;
             Pain = pain;
             CreationDate = DateTime.Now.ToString();
         }

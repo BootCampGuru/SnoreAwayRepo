@@ -56,14 +56,22 @@ namespace SnoreAway.Start
         {
             //Create a new session
             //Create a new Presleep item and link it to the session
-
             Models.Session session = new Models.Session();
-            session.StartTime = DateTime.Now.ToString();
-            session.ProfileId = App.UserId;
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
 
-            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+            if (App.SessionId == 0)
+            {
+              
+                session.StartTime = DateTime.Now.ToString();
+                session.ProfileId = App.UserId;
+                var newSession = Db_Helper.InsertSession(session);
+            }
+            else
+            {
+                session = Db_Helper.ReadSession(App.SessionId);
+               
+            }
 
-            var newSession = Db_Helper.InsertSession(session);
 
             if (session.Id != 0)
             {
@@ -74,11 +82,13 @@ namespace SnoreAway.Start
                 {
                     session.FileLocation = @"Session_" + session.Id;
                     session.CreationDate = DateTime.Now.ToString();
+                    preSleepSession.WorkoutFlag = TglWorkOut.IsOn;
                     preSleepSession.CoffeeFlag = TglCoffee.IsOn;
                     preSleepSession.DrinkFlag = TglDrink.IsOn;
                     preSleepSession.HeavyMeal = TglMeal.IsOn;
                     preSleepSession.Pain = TglSick.IsOn;
                     preSleepSession.SmokeFlag = TglSmoker.IsOn;
+                    preSleepSession.MedicineFlag = TglMedicine.IsOn;
                     TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
                     preSleepSession.DinnerTime = tmpDinner.Time.ToString();
 
@@ -95,6 +105,8 @@ namespace SnoreAway.Start
                     //Create PreSleep
 
                     Models.PreSleep preSleep = new Models.PreSleep();
+                    preSleepSession.MedicineFlag = TglMedicine.IsOn;
+                    preSleepSession.WorkoutFlag = TglWorkOut.IsOn;
                     preSleep.CoffeeFlag = TglCoffee.IsOn;
                     preSleep.DrinkFlag = TglDrink.IsOn;
                     preSleep.HeavyMeal = TglMeal.IsOn;

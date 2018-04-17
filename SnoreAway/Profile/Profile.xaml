@@ -16,7 +16,7 @@
                 </StackPanel>
                 
                 <StackPanel Background="Black">
-                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="Brown"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="White"/>
                 </StackPanel>
               
 
@@ -63,7 +63,9 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <Button  FontSize="24" Foreground="Orange" HorizontalAlignment="Center" Height="60" x:Name="btnSubmit" Click="btnSubmit_Click" Content="SUBMIT" Background="blue" />
+                    <Button HorizontalAlignment="Center" x:Name="btnSubmit" Click="btnSubmit_Click" >
+                        <Image Source="/Assets/submit.png" Height="160" Width="200" />
+                    </Button>
                 </StackPanel>
 
             </StackPanel>

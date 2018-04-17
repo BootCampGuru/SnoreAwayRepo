@@ -201,7 +201,7 @@ namespace SnoreAway
             UpdateRecordingControls(RecordingMode.Recording);
 
             //Update Session
-            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
+            DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
 
 
             //Retrieve Session based on UserId
