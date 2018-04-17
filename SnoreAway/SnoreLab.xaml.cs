@@ -52,10 +52,10 @@ namespace SnoreAway
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();//Creating object for DatabaseHelperClass.cs from ViewModel/DatabaseHelperClass.cs    
             var session = Db_Helper.ReadSession(App.UserId);
 
-            if(session != null)
-            {
-                Duration.Text = session.Duration;
-            }
+            //if(session != null)
+            //{
+            //    Duration.Text = session.Duration != null ? session.Duration : "";
+            //}
 
             await InitMediaCapture();
             UpdateRecordingControls(RecordingMode.Initializing);
@@ -268,10 +268,15 @@ namespace SnoreAway
             Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 
+            var checkFile = await storageFolder.GetFileAsync(session.FileLocation);
+
             //Create file
 
-            var storageFile = await storageFolder.CreateFileAsync(session.FileLocation);
 
+            if (checkFile == null)
+            {
+                var storageFile = await storageFolder.CreateFileAsync(session.FileLocation);
+            }
             Windows.Storage.StorageFile mediaFile =
                 await storageFolder.GetFileAsync(session.FileLocation);
 

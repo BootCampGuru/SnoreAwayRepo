@@ -15,7 +15,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
 
                 <StackPanel Background="Black">
-                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Pre Sleep Checklist" Foreground="Brown"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Pre Sleep Checklist" Foreground="White"/>
                 </StackPanel>
 
                 <StackPanel>

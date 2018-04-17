@@ -43,6 +43,8 @@ namespace SnoreAway.Start
                 TglMeal.IsOn = preSleepSession.HeavyMeal;
                 TglSick.IsOn = preSleepSession.Pain;
                 TglSmoker.IsOn = preSleepSession.SmokeFlag;
+                TglMedicine.IsOn = preSleepSession.MedicineFlag;
+                TglWorkOut.IsOn = preSleepSession.WorkoutFlag;
                 var dinnerTime = Convert.ToDateTime(preSleepSession.DinnerTime);
                 TimeSpan timeSpan = new TimeSpan(dinnerTime.Hour, dinnerTime.Minute, dinnerTime.Second);
                 tmpDinner.Time = timeSpan;
@@ -64,6 +66,7 @@ namespace SnoreAway.Start
               
                 session.StartTime = DateTime.Now.ToString();
                 session.ProfileId = App.UserId;
+                session.CreationDate = DateTime.Now.ToString();
                 var newSession = Db_Helper.InsertSession(session);
             }
             else
@@ -89,6 +92,8 @@ namespace SnoreAway.Start
                     preSleepSession.Pain = TglSick.IsOn;
                     preSleepSession.SmokeFlag = TglSmoker.IsOn;
                     preSleepSession.MedicineFlag = TglMedicine.IsOn;
+                    preSleepSession.CreationDate = DateTime.Now.ToString();
+                    preSleepSession.ProfileId = session.ProfileId;
                     TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
                     preSleepSession.DinnerTime = tmpDinner.Time.ToString();
 
@@ -105,8 +110,10 @@ namespace SnoreAway.Start
                     //Create PreSleep
 
                     Models.PreSleep preSleep = new Models.PreSleep();
-                    preSleepSession.MedicineFlag = TglMedicine.IsOn;
-                    preSleepSession.WorkoutFlag = TglWorkOut.IsOn;
+                    preSleep.CreationDate = DateTime.Now.ToString();
+                    preSleep.ProfileId = session.ProfileId;
+                    preSleep.MedicineFlag = TglMedicine.IsOn;
+                    preSleep.WorkoutFlag = TglWorkOut.IsOn;
                     preSleep.CoffeeFlag = TglCoffee.IsOn;
                     preSleep.DrinkFlag = TglDrink.IsOn;
                     preSleep.HeavyMeal = TglMeal.IsOn;

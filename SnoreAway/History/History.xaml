@@ -41,19 +41,19 @@
                                 <TextBlock  Width="400"  FontSize="30" Foreground="Black" Text="{Binding EndTime}"  />
 
                                 <StackPanel>
-                                    <HyperlinkButton CommandParameter="{Binding Id}" FontSize="24" x:Name="lnkDetails" Click="lnkDetails_Click" >Details</HyperlinkButton>
+                                    <HyperlinkButton Margin="5,5,5,5" CommandParameter="{Binding Id}" FontSize="24" x:Name="lnkDetails" Click="lnkDetails_Click" >Details</HyperlinkButton>
                                 </StackPanel>
 
                                 <StackPanel>
-                                    <HyperlinkButton CommandParameter="{Binding Id}" FontSize="24" x:Name="lnkEdit" Click="lnkEdit_Click">Edit</HyperlinkButton>
+                                    <HyperlinkButton Margin="5,5,5,5"  CommandParameter="{Binding Id}" FontSize="24" x:Name="lnkEdit" Click="lnkEdit_Click">Edit</HyperlinkButton>
                                 </StackPanel>
 
                                 <StackPanel>
-                                    <HyperlinkButton CommandParameter="{Binding Id}"  FontSize="24" x:Name="lnkDelete" Click="lnkDelete_Click">Delete</HyperlinkButton>
+                                    <HyperlinkButton Margin="5,5,5,5"  CommandParameter="{Binding Id}"  FontSize="24" x:Name="lnkDelete" Click="lnkDelete_Click">Delete</HyperlinkButton>
                                 </StackPanel>
 
                                 <ListViewItem>
-                                    <HyperlinkButton CommandParameter="{Binding Id}"  FontSize="24" x:Name="lnkShare" Click="lnkShare_Click">Share</HyperlinkButton>
+                                    <HyperlinkButton Margin="5,5,5,5"  CommandParameter="{Binding Id}"  FontSize="24" x:Name="lnkShare" Click="lnkShare_Click">Share</HyperlinkButton>
                                 </ListViewItem>
                             </StackPanel>
                     </DataTemplate>
