@@ -27,7 +27,14 @@ namespace SnoreAway.History
         {
             InitializeComponent();
         }
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
 
+            }
+        }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;

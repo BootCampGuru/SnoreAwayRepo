@@ -33,5 +33,14 @@ namespace SnoreAway.History
             rootFrame.Navigate(typeof(MainPage));
         }
 
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+
+            }
+        }
+
     }
 }
