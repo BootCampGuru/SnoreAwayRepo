@@ -5,6 +5,7 @@
     xmlns:local="using:SnoreAway.History"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
     mc:Ignorable="d">
     <ScrollViewer>
         <Grid VerticalAlignment="Top">
@@ -17,6 +18,13 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                     <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
                         <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
                     </Button>
+                </StackPanel>
+                <StackPanel>
+
+                    <Charting:Chart  x:Name="lineChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="159" Width="316" >
+                        <Charting:LineSeries Margin="0"  IndependentValuePath="Name"  DependentValuePath="Amount"  IsSelectionEnabled="True"/>
+                    </Charting:Chart>
+
                 </StackPanel>
                 <StackPanel>
                 <MediaElement Height="120" Margin="10,10,108,0"  Name="mediaElement1" VerticalAlignment="Top" />
