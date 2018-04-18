@@ -195,7 +195,7 @@ namespace SnoreAway
             var audioQualities = Enum.GetValues(typeof(AudioEncodingQuality)).Cast<AudioEncodingQuality>();
             SelectedQuality = (AudioEncodingQuality)audioQualities.First();
             AudioStream = new InMemoryRandomAccessStream();
-            encodingProfile = Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3(SelectedQuality);
+            encodingProfile = Windows.Media.MediaProperties.MediaEncodingProfile.CreateWav(SelectedQuality);
             await CaptureMedia.StartRecordToStreamAsync(encodingProfile, AudioStream);
 
             UpdateRecordingControls(RecordingMode.Recording);
@@ -268,15 +268,23 @@ namespace SnoreAway
             Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 
-            var checkFile = await storageFolder.GetFileAsync(session.FileLocation);
+
+            try
+            {
+                var checkFile = await storageFolder.GetFileAsync(session.FileLocation);
+            }
+            catch
+            {
+                var storageFile = await storageFolder.CreateFileAsync(session.FileLocation);
+            }
 
             //Create file
 
 
-            if (checkFile == null)
-            {
-                var storageFile = await storageFolder.CreateFileAsync(session.FileLocation);
-            }
+           // if (checkFile == null)
+           // {
+            //    var storageFile = await storageFolder.CreateFileAsync(session.FileLocation);
+           // }
             Windows.Storage.StorageFile mediaFile =
                 await storageFolder.GetFileAsync(session.FileLocation);
 

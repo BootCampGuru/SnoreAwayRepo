@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\History.cs" />
+    <Compile Include="Models\LineItem.cs" />
     <Compile Include="Models\PostSleep.cs" />
     <Compile Include="Models\PreSleep.cs" />
     <Compile Include="Models\Profile.cs" />
@@ -144,6 +145,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Sample\Session_4.wav" />
     <None Include="SnoreAway_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +171,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Sample\test.wav" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -21,8 +21,8 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
                 <StackPanel>
 
-                    <Charting:Chart  x:Name="lineChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="159" Width="316" >
-                        <Charting:LineSeries Margin="0"  IndependentValuePath="Name"  DependentValuePath="Amount"  IsSelectionEnabled="True"/>
+                    <Charting:Chart  x:Name="lineChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
+                        <Charting:LineSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>
                     </Charting:Chart>
 
                 </StackPanel>
