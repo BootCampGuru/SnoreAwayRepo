@@ -32,7 +32,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
                 <StackPanel>
 
-                    <Button x:Name="btnPlay"  Click="HyperAccount_Click"  HorizontalAlignment="Center" VerticalAlignment="Center"  Padding="0" BorderThickness="0">
+                    <Button x:Name="btnPlay"  Click="HyperAccount_Click"  HorizontalAlignment="Left" VerticalAlignment="Center" >
                         <Image Width="100" Height="80" Source="/Assets/play.png" />
                     </Button>
                 </StackPanel>

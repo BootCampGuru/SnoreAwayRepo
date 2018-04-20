@@ -64,7 +64,7 @@
 
                 <StackPanel>
                     <Button HorizontalAlignment="Center" x:Name="btnSubmit" Click="btnSubmit_Click" >
-                        <Image Source="/Assets/submit.png" Height="160" Width="200" />
+                        <Image Source="/Assets/submit.png" Height="60" Width="100" />
                     </Button>
                 </StackPanel>
 
