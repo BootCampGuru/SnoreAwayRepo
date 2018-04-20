@@ -19,10 +19,47 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                     <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
                 </Button>
             </StackPanel>
+            <StackPanel>
+                <ListView SelectedItem ="{Binding Id}"  IsItemClickEnabled="True"  Grid.Row="1"  Margin="10" Name="lvDataBinding" >
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="gray" Orientation="Horizontal">
+                             
+                                <TextBlock Width="50" FontSize="36" Foreground="Black" Text="ID" />
+                                <TextBlock Width="400" FontSize="36" Foreground="Black" Text="Start Date" />
+                                <TextBlock Width="400" FontSize="36" Foreground="Black" Text="End Date"/>
+           
+                        
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="20"  Orientation="Horizontal">
+                        
+                                <TextBlock  Width="50" FontSize="30" Foreground="Black" Text="{Binding Id}"  />
+
+                                <TextBlock  Width="400" FontSize="30" Foreground="Black" Text="{Binding StartTime}" />
+
+                                <TextBlock  Width="400"  FontSize="30" Foreground="Black" Text="{Binding EndTime}"  />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
             <TextBlock FontSize="24" Foreground="Orange" Text="Pick the Third Party vendors you would like to have access to your record" />
             <CheckBox>Snore Labs</CheckBox>
             <CheckBox>Sleep World</CheckBox>
             <CheckBox>Sleep Medications</CheckBox>
+            <CheckBox>Sleep Providers</CheckBox>
+            <StackPanel HorizontalAlignment="Center">
+
+                <Button HorizontalAlignment="Center" x:Name="btnSubmit" Click="btnSubmit_Click" >
+                    <Image Source="/Assets/disk.png" Height="60" Width="200" />
+                </Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
