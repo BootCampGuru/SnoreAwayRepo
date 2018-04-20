@@ -7,16 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollViewer>
-        <Grid Background="SeaGreen">
+        <Grid Background="black">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel Background="CornflowerBlue">
-                    <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
-                        <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
+                <StackPanel Background="red">
+                    <Button Width="100" Height="100" Name="bntHome" Click="btnHome_Click" >
+                        <Image Source="/Assets/Home.png" HorizontalAlignment="Left"/>
                     </Button>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="White"/>
                 </StackPanel>
                 
                 <StackPanel Background="Black">
-                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="White"/>
+                    
                 </StackPanel>
               
 
