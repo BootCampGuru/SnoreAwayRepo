@@ -21,25 +21,32 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
                 <StackPanel>
 
-                    <Charting:Chart  x:Name="lineChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
-                        <Charting:LineSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>
-                    </Charting:Chart>
 
                 </StackPanel>
                 <StackPanel>
                 <MediaElement Height="120" Margin="10,10,108,0"  Name="mediaElement1" VerticalAlignment="Top" />
             </StackPanel>
             <StackPanel>
-                <HyperlinkButton FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Play Recording</HyperlinkButton>
+                <HyperlinkButton FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Display Charts</HyperlinkButton>
             </StackPanel>
+
+                <StackPanel>
+
+                    <Button x:Name="btnLogout"  Click="HyperAccount_Click"  Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"  Padding="0" BorderThickness="0">
+                        <Image Height="50" Source="/Assets/play.png" />
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock FontSize="16" Foreground="Black" Text="Your Snore Score is 4" />
+                </StackPanel>
             <StackPanel>
-                <TextBlock Foreground="Orange" FontSize="24" Text="Session Record" />
+                <TextBlock Foreground="Black" FontSize="24" Text="Session Record" />
                 <TextBlock FontSize="16" x:Name="StartTime"/>
                 <TextBlock FontSize="16" x:Name="EndTime" />
                 <TextBlock FontSize="16" x:Name="Duration"/>
             </StackPanel>
             <StackPanel>
-                <TextBlock Foreground="Orange" FontSize="24" Text="Pre Sleep Record" />
+                <TextBlock Foreground="Black" FontSize="24" Text="Pre Sleep Record" />
                 <TextBlock FontSize="16" x:Name="Workout"/>
                 <TextBlock FontSize="16" x:Name="Drink" />
                 <TextBlock FontSize="16" x:Name="Coffee"/>
@@ -49,7 +56,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 <TextBlock FontSize="16" x:Name="DinnerTime" />
             </StackPanel>
             <StackPanel>
-                <TextBlock Foreground="Orange" FontSize="24" Text="Post Sleep Record" />
+                <TextBlock Foreground="Black" FontSize="24" Text="Post Sleep Record" />
                 <TextBlock FontSize="16" x:Name="SleptWell" />
                 <TextBlock FontSize="16" x:Name="FeltFresh" />
                 <TextBlock FontSize="16" x:Name="WokeUp" />

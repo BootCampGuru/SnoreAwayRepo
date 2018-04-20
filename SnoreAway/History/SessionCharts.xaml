@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="SnoreAway.History.SessionCharts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SnoreAway.History"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d">
+
+    <Grid Background="LightBlue">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Charting:Chart  x:Name="lineChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
+                    <Charting:LineSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>
+                </Charting:Chart>
+
+
+                <Charting:Chart  x:Name="pieChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
+                    <Charting:PieSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>
+                </Charting:Chart>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Charting:Chart  x:Name="barChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
+                    <Charting:BarSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>
+                </Charting:Chart>
+
+                <Charting:Chart  x:Name="columnChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
+                    <Charting:ColumnSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>
+                </Charting:Chart>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

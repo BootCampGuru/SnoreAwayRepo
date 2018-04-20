@@ -105,6 +105,9 @@
     <Compile Include="History\History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
     </Compile>
+    <Compile Include="History\SessionCharts.xaml.cs">
+      <DependentUpon>SessionCharts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="History\Share.xaml.cs">
       <DependentUpon>Share.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,8 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\play.png" />
+    <Content Include="Sample\mywav.wav" />
     <Content Include="Sample\Session_4.wav" />
     <None Include="SnoreAway_TemporaryKey.pfx" />
   </ItemGroup>
@@ -171,6 +176,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Sample\Session_5.wav" />
     <Content Include="Sample\test.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="History\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History\SessionCharts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

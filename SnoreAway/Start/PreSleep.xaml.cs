@@ -83,7 +83,7 @@ namespace SnoreAway.Start
 
                 if (preSleepSession != null)
                 {
-                    session.FileLocation = @"Session_" + session.Id;
+                    session.FileLocation = @"Session_" + session.Id + ".wav";
                     session.CreationDate = DateTime.Now.ToString();
                     preSleepSession.WorkoutFlag = TglWorkOut.IsOn;
                     preSleepSession.CoffeeFlag = TglCoffee.IsOn;
@@ -105,7 +105,7 @@ namespace SnoreAway.Start
                     App.SessionId = session.Id;
                     //files will be saved in the MyMusic location
                     //but possible extension is to use the configuration file in the future
-                    session.FileLocation = @"Session_" + session.Id;
+                    session.FileLocation = @"Session_" + session.Id + ".wav";
                     session.CreationDate = DateTime.Now.ToString();
                     //Create PreSleep
 
