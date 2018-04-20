@@ -39,7 +39,17 @@ namespace SnoreAway.History
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
 
+            DisplayWaveForm();
+        }
 
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+
+            }
         }
 
         private async void DisplayWaveForm()
@@ -66,33 +76,38 @@ Windows.Storage.ApplicationData.Current.LocalFolder;
                 List<DataPoint> dataPoints = new List<DataPoint>();
 
                 List<float> records = new List<float>();
-                while (wave.Position < wave.Length)
-                {
-                    read = wave.Read(buffer, 0, 16384);
-                    for (int i = 0; i < read / 4; i++)
-                    {
-                        // dataPoints.Add(new DataPoint() { BitConverter.ToSingle(buffer, i * 4) }); 
-                        var convertor = BitConverter.ToSingle(buffer, i * 4);
-                        records.Add(convertor);
+                //while (wave.Position < wave.Length)
+                //{
+                //    read = wave.Read(buffer, 0, 16384);
+                //    for (int i = 0; i < read / 4; i++)
+                //    {
+                //        // dataPoints.Add(new DataPoint() { BitConverter.ToSingle(buffer, i * 4) }); 
+                //        var convertor = BitConverter.ToSingle(buffer, i * 4);
+                //        records.Add(convertor);
 
-                        recordslist.Add(new LineItem()
-                        {
-                            Name = i.ToString(),
-                            Amount = convertor
-                        });
+                //        recordslist.Add(new LineItem()
+                //        {
+                //            Name = i.ToString(),
+                //            Amount = convertor
+                //        });
 
 
-                    }
-                }
+                //    }
+                //}
                 List<LineItem> newWave = new List<LineItem>();
 
-                for (int i = 0; i < 600; i++)
+                for (int i = 0; i < 10; i++)
                 {
-
-                    newWave.Add(recordslist[i]);
+                    LineItem p1 = new LineItem();
+                    p1.Amount = i;
+                    p1.Name = i.ToString();
+                    newWave.Add(p1);
                 }
 
                  (lineChart.Series[0] as LineSeries).ItemsSource = newWave;
+                (pieChart.Series[0] as PieSeries).ItemsSource = newWave;
+                (barChart.Series[0] as BarSeries).ItemsSource = newWave;
+               // (ColumnSeries.Series[0] as LineSeries).ItemsSource = newWave;
 
             }
 

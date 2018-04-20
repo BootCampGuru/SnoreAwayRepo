@@ -10,6 +10,10 @@
 
     <Grid Background="LightBlue">
         <StackPanel>
+            <StackPanel>
+                <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
+Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Charting:Chart  x:Name="lineChart"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0" Height="400" Width="800" >
                     <Charting:LineSeries  Margin="0" IndependentValuePath="Name" DependentValuePath="Amount"  IsSelectionEnabled="True"/>

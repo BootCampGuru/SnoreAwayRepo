@@ -27,13 +27,13 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 <MediaElement Height="120" Margin="10,10,108,0"  Name="mediaElement1" VerticalAlignment="Top" />
             </StackPanel>
             <StackPanel>
-                <HyperlinkButton FontSize="24" x:Name="HyperAccount" Click="HyperAccount_Click">Display Charts</HyperlinkButton>
+                <HyperlinkButton FontSize="24" x:Name="chartLink" Click="chartLink_Click">Display Charts</HyperlinkButton>
             </StackPanel>
 
                 <StackPanel>
 
-                    <Button x:Name="btnLogout"  Click="HyperAccount_Click"  Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"  Padding="0" BorderThickness="0">
-                        <Image Height="50" Source="/Assets/play.png" />
+                    <Button x:Name="btnPlay"  Click="HyperAccount_Click"  HorizontalAlignment="Center" VerticalAlignment="Center"  Padding="0" BorderThickness="0">
+                        <Image Height="150" Source="/Assets/play.png" />
                     </Button>
                 </StackPanel>
                 <StackPanel>

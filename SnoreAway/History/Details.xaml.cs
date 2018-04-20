@@ -107,5 +107,11 @@ Windows.Storage.ApplicationData.Current.LocalFolder;
             }
 
         }
+
+        private void chartLink_Click(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(SessionCharts));
+        }
     }
 }
