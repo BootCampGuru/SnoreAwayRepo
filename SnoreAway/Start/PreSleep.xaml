@@ -59,6 +59,12 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                     <TextBlock  FontSize="36" Foreground="Orange" Text="Did you take Medicine?"></TextBlock>
                     <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglMedicine"/>
                 </StackPanel>
+
+                <StackPanel>
+                    <TextBlock  FontSize="36" Foreground="Orange" Text="How many times did you take a nap during the day?"></TextBlock>
+                    <TextBox HorizontalAlignment="Left" FontSize="36" Width="40"  x:Name="txtTimes" />
+
+                </StackPanel>
                 <StackPanel>
                     <Button FontSize="24" HorizontalAlignment="Center" Click="btnSubmit_ClickAsync" Height="60" Width="100" x:Name="btnSubmit" Content="NEXT" Foreground="Black" Background="Orange" />
                 </StackPanel>

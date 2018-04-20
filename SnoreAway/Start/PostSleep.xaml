@@ -16,7 +16,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
 
                 <StackPanel Background="Black">
-                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Post Sleep Checklist" Foreground="Brown"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Post Sleep Checklist" Foreground="White"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -26,7 +26,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
                 <StackPanel>
                     <TextBlock  FontSize="36" Foreground="Orange" Text="How many times did you wake up at night?"></TextBlock>
-                    <TextBox FontSize="36"  x:Name="txtTimes" />
+                    <TextBox HorizontalAlignment="Left" FontSize="36" Width="40"  x:Name="txtTimes" />
 
                 </StackPanel>
 
