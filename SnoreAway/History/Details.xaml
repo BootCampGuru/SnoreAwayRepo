@@ -14,14 +14,12 @@
                     <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
-                <StackPanel Background="#FF2154">
+    
+                <StackPanel Background="FloralWhite">
                     <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
                         <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
                     </Button>
-                </StackPanel>
-                <StackPanel>
-
-
+                    <TextBlock HorizontalAlignment="Center"  FontSize="36" Text="Details" Foreground="Brown"/>
                 </StackPanel>
                 <StackPanel>
                 <MediaElement Height="10" Margin="5,5,0,0"  Name="mediaElement1" VerticalAlignment="Top" />
@@ -54,7 +52,8 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                     <TextBlock Foreground="White"  FontSize="16" x:Name="Medicine" />
                     <TextBlock Foreground="White"  FontSize="16" x:Name="LargeMeal" />
                     <TextBlock Foreground="White"  FontSize="16" x:Name="DinnerTime" />
-            </StackPanel>
+                    <TextBlock Foreground="White"  FontSize="16" x:Name="DaySleep" />
+                </StackPanel>
             <StackPanel>
                 <TextBlock Foreground="White" FontSize="24" Text="Post Sleep Record" />
                     <TextBlock Foreground="White"  FontSize="16" x:Name="SleptWell" />

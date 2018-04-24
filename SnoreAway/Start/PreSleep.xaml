@@ -7,66 +7,66 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollViewer>
-        <Grid Background="SeaGreen" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <Grid Background="#020623" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <StackPanel>
                     <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
 
-                <StackPanel Background="Black">
+                <StackPanel Background="SeaGreen">
                     <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Pre Sleep Checklist" Foreground="White"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange" Text="Did you Smoke today?"></TextBlock>
-                    <ToggleSwitch  FontSize="36" Foreground="Red"  x:Name="TglSmoker"/>
+                    <TextBlock FontSize="36" Foreground="White" Text="Did you Smoke today?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen"  FontSize="36" Foreground="Azure"  x:Name="TglSmoker"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange"  Text="Did you work out today?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglWorkOut"/>
+                    <TextBlock FontSize="36" Foreground="White"  Text="Did you work out today?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen" FontSize="36" Foreground="Azure"  x:Name="TglWorkOut"/>
 
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange"  Text="Did Drink today?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglDrink"/>
+                    <TextBlock FontSize="36" Foreground="White"  Text="Did Drink today?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen" FontSize="36" Foreground="Azure"  x:Name="TglDrink"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange" Text="What time did you have dinner?"></TextBlock>
+                    <TextBlock FontSize="36" Foreground="White" Text="What time did you have dinner?"></TextBlock>
                   
-                    <TimePicker  FontSize="36" Foreground="Orange" x:Name="tmpDinner" Header=""/>
+                    <TimePicker  FontSize="36" Foreground="White" x:Name="tmpDinner" Header=""/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange"  Text="Did you drink Coffee before bed?"></TextBlock>
-                    <ToggleSwitch   FontSize="36" Foreground="Red"  x:Name="TglCoffee"/>
+                    <TextBlock FontSize="36" Foreground="White"  Text="Did you drink Coffee before bed?"></TextBlock>
+                    <ToggleSwitch  Background="SeaGreen"  FontSize="36" Foreground="Azure"  x:Name="TglCoffee"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange"  Text="Did you have heavy meal before sleep?"></TextBlock>
-                    <ToggleSwitch  FontSize="36" Foreground="Red" x:Name="TglMeal"/>
+                    <TextBlock  FontSize="36" Foreground="White"  Text="Did you have heavy meal before sleep?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen"  FontSize="36" Foreground="Azure" x:Name="TglMeal"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange"  Text="Are you in pain?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglSick"/>
+                    <TextBlock  FontSize="36" Foreground="White"  Text="Are you in pain?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen" FontSize="36" Foreground="Azure"  x:Name="TglSick"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange" Text="Did you take Medicine?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Red"  x:Name="TglMedicine"/>
+                    <TextBlock  FontSize="36" Foreground="White" Text="Did you take Medicine?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen" FontSize="36" Foreground="Azure"  x:Name="TglMedicine"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange" Text="How many times did you take a nap during the day?"></TextBlock>
+                    <TextBlock  FontSize="36" Foreground="White" Text="How many times did you take a nap during the day?"></TextBlock>
                     <TextBox HorizontalAlignment="Left" FontSize="36" Width="40"  x:Name="txtTimes" />
 
                 </StackPanel>
                 <StackPanel>
-                    <Button FontSize="24" HorizontalAlignment="Center" Click="btnSubmit_ClickAsync" Height="60" Width="100" x:Name="btnSubmit" Content="NEXT" Foreground="Black" Background="Orange" />
+                    <Button FontSize="24" HorizontalAlignment="Center" Click="btnSubmit_ClickAsync" Height="60" Width="100" x:Name="btnSubmit" Content="NEXT" Foreground="Black" Background="White" />
                 </StackPanel>
 
             </StackPanel>

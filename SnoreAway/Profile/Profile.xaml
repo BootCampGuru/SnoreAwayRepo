@@ -9,11 +9,11 @@
     <ScrollViewer>
         <Grid Background="#020623">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel Background="#52eb7b">
+                <StackPanel Background="FloralWhite">
                     <Button Width="100" Height="100" Name="bntHome" Click="btnHome_Click" >
                         <Image Source="/Assets/Home.png" HorizontalAlignment="Left"/>
                     </Button>
-                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Text="User Profile" Foreground="Black"/>
                 </StackPanel>
                 
                 <StackPanel Background="Black">
@@ -22,44 +22,44 @@
               
 
                 <StackPanel>
-                    <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="First Name" />
-                    <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtFirstName"/>
+                    <TextBlock  FontSize="24" Foreground="White" Height="40"  Text="First Name" />
+                    <TextBox  FontSize="24" Foreground="White" Height="60"  x:Name="txtFirstName"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="24" Foreground="Orange" Height="40"  Text="Last Name" />
-                    <TextBox  FontSize="24" Foreground="Orange" Height="60"  x:Name="txtLastName"/>
+                    <TextBlock  FontSize="24" Foreground="White" Height="40"  Text="Last Name" />
+                    <TextBox  FontSize="24" Foreground="White" Height="60"  x:Name="txtLastName"/>
 
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock FontSize="24" Foreground="Orange"  Text="Do you Smoke?"></TextBlock>
-                    <ToggleSwitch FontSize="24" Foreground="Orange" x:Name="TglSmoker"/>
+                    <TextBlock FontSize="24" Foreground="White"  Text="Do you Smoke?"></TextBlock>
+                    <ToggleSwitch FontSize="24" Foreground="White" x:Name="TglSmoker"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="24" Foreground="Orange"  Text="Do you work out?"></TextBlock>
-                    <ToggleSwitch FontSize="24" Foreground="Orange"  x:Name="TglWorkOut"/>
+                    <TextBlock FontSize="24" Foreground="White"  Text="Do you work out?"></TextBlock>
+                    <ToggleSwitch FontSize="24" Foreground="White"  x:Name="TglWorkOut"/>
 
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="24" Foreground="Orange"  Text="Do you Drink?"></TextBlock>
-                    <ToggleSwitch FontSize="24" Foreground="Orange"  x:Name="TglDrink"/>
+                    <TextBlock FontSize="24" Foreground="White"  Text="Do you Drink?"></TextBlock>
+                    <ToggleSwitch FontSize="24" Foreground="White"  x:Name="TglDrink"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="24" Foreground="Orange" Text="What time do you have dinner?"></TextBlock>
-                    <TimePicker  FontSize="24" Foreground="Orange" x:Name="tmpDinner" Header="Dinner time"/>
+                    <TextBlock FontSize="24" Foreground="White" Text="What time do you have dinner?"></TextBlock>
+                    <TimePicker  FontSize="24" Foreground="White" x:Name="tmpDinner" Header="Dinner time"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="24" Foreground="Orange" Text="Do you drink Coffee?"></TextBlock>
+                    <TextBlock FontSize="24" Foreground="White" Text="Do you drink Coffee?"></TextBlock>
                     <ToggleSwitch x:Name="TglCoffee"/>
                 </StackPanel>
 
 
                 <StackPanel>
-                    <TextBlock  FontSize="24" Foreground="Orange" Text="Do you take medication?"></TextBlock>
+                    <TextBlock  FontSize="24" Foreground="White" Text="Do you take medication?"></TextBlock>
                     <ToggleSwitch x:Name="TglSick"/>
                 </StackPanel>
 

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollViewer>
-        <Grid Background="SeaGreen" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid Background="#020623" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
                 <StackPanel>
@@ -15,29 +15,29 @@
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
 
-                <StackPanel Background="Black">
+                <StackPanel Background="SeaGreen">
                     <TextBlock HorizontalAlignment="Center" FontSize="36" Text="Post Sleep Checklist" Foreground="White"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock FontSize="36" Foreground="Orange" Text="Did you Wake up feeling fresh?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Orange"  x:Name="TglFresh"/>
+                    <TextBlock FontSize="36" Foreground="White" Text="Did you Wake up feeling fresh?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen" FontSize="36" Foreground="White"  x:Name="TglFresh"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange" Text="How many times did you wake up at night?"></TextBlock>
-                    <TextBox HorizontalAlignment="Left" FontSize="36" Width="40"  x:Name="txtTimes" />
+                    <TextBlock  FontSize="36" Foreground="White" Text="How many times did you wake up at night?"></TextBlock>
+                    <TextBox Background="SeaGreen" HorizontalAlignment="Left" FontSize="36" Width="40"  x:Name="txtTimes" />
 
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock  FontSize="36" Foreground="Orange" Text="Did you wake up on time?"></TextBlock>
-                    <ToggleSwitch FontSize="36" Foreground="Orange"  x:Name="TglOnTime"/>
+                    <TextBlock  FontSize="36" Foreground="White" Text="Did you wake up on time?"></TextBlock>
+                    <ToggleSwitch Background="SeaGreen" FontSize="36" Foreground="White"  x:Name="TglOnTime"/>
                 </StackPanel>
 
 
                 <StackPanel>
-                    <Button HorizontalAlignment="Center" Click="btnSubmit_Click" Height="60" x:Name="btnSubmit" Content="NEXT" Background="orange" />
+                    <Button HorizontalAlignment="Center" Click="btnSubmit_Click" Height="60" x:Name="btnSubmit" Content="NEXT" Background="White" />
                 </StackPanel>
 
             </StackPanel>

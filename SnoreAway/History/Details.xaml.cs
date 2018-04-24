@@ -87,11 +87,12 @@ Windows.Storage.ApplicationData.Current.LocalFolder;
             if (preSleepSession != null)
             {
 
-                Coffee.Text = preSleepSession.CoffeeFlag ? "Individual drank Coffee" : "";
-                Smoke.Text = preSleepSession.SmokeFlag ? "Individual Smoked" : "";
-                Drink.Text = preSleepSession.DrinkFlag ? "Individual Drank" : "";
-                Medicine.Text = preSleepSession.Pain ? "Individual felt Pain or was Sick" : "";
-                LargeMeal.Text = preSleepSession.HeavyMeal ? "Individual had a large meal" : "";
+                Coffee.Text = preSleepSession.CoffeeFlag ? "Individual drank Coffee" : "Individual didn't drink Coffee before bed";
+                Smoke.Text = preSleepSession.SmokeFlag ? "Individual Smoked" : "Individual didn't smoke before bed";
+                Drink.Text = preSleepSession.DrinkFlag ? "Individual Drank" : "Individual didn't drink before bed";
+                Medicine.Text = preSleepSession.Pain ? "Individual felt Pain or was Sick" : "Individual didn't feel any pain before bed";
+                LargeMeal.Text = preSleepSession.HeavyMeal ? "Individual had a large meal" : "Individual didn't have a large meal";
+                DaySleep.Text = preSleepSession.DaySleepFlag != 0 ? "Indivdual slept " + preSleepSession.DaySleepFlag.ToString() + " times" : "";
                 DinnerTime.Text = preSleepSession.DinnerTime.ToString();
 
 

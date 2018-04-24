@@ -45,6 +45,7 @@ namespace SnoreAway.Start
                 TglSmoker.IsOn = preSleepSession.SmokeFlag;
                 TglMedicine.IsOn = preSleepSession.MedicineFlag;
                 TglWorkOut.IsOn = preSleepSession.WorkoutFlag;
+                txtTimes.Text = preSleepSession.DaySleepFlag.ToString();
                 var dinnerTime = Convert.ToDateTime(preSleepSession.DinnerTime);
                 TimeSpan timeSpan = new TimeSpan(dinnerTime.Hour, dinnerTime.Minute, dinnerTime.Second);
                 tmpDinner.Time = timeSpan;
@@ -90,6 +91,7 @@ namespace SnoreAway.Start
                     preSleepSession.DrinkFlag = TglDrink.IsOn;
                     preSleepSession.HeavyMeal = TglMeal.IsOn;
                     preSleepSession.Pain = TglSick.IsOn;
+                    preSleepSession.DaySleepFlag = Convert.ToInt16(txtTimes.Text);
                     preSleepSession.SmokeFlag = TglSmoker.IsOn;
                     preSleepSession.MedicineFlag = TglMedicine.IsOn;
                     preSleepSession.CreationDate = DateTime.Now.ToString();
@@ -118,6 +120,7 @@ namespace SnoreAway.Start
                     preSleep.DrinkFlag = TglDrink.IsOn;
                     preSleep.HeavyMeal = TglMeal.IsOn;
                     preSleep.Pain = TglSick.IsOn;
+                    preSleep.DaySleepFlag = txtTimes.Text != "" ? Convert.ToInt16(txtTimes.Text) : 0;
                     preSleep.SmokeFlag = TglSmoker.IsOn;
                     TimeSpan openTime = new TimeSpan(tmpDinner.Time.Hours, tmpDinner.Time.Minutes, tmpDinner.Time.Seconds);
                     preSleep.DinnerTime = tmpDinner.Time.ToString();
