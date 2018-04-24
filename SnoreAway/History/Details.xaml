@@ -16,10 +16,11 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>
     
                 <StackPanel Background="FloralWhite">
-                    <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
+                    <TextBlock HorizontalAlignment="Center"  FontSize="36" Text="Details" Foreground="Brown"/>
+                    <Button Width="50" Height="50" Name="bntHome" Click="btnHome_Click" >
                         <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
                     </Button>
-                    <TextBlock HorizontalAlignment="Center"  FontSize="36" Text="Details" Foreground="Brown"/>
+                 
                 </StackPanel>
                 <StackPanel>
                 <MediaElement Height="10" Margin="5,5,0,0"  Name="mediaElement1" VerticalAlignment="Top" />

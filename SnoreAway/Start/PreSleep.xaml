@@ -9,7 +9,7 @@
     <ScrollViewer>
         <Grid Background="#020623" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible">
-                <StackPanel>
+                <StackPanel Background="White">
                     <Button Height="60" x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Top" HorizontalAlignment="Left" 
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </StackPanel>

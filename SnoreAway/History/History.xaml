@@ -10,7 +10,7 @@
         <Grid>
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel Background="CornflowerBlue">
-                <Button Width="200" Height="200" Name="bntHome" Click="btnHome_Click" >
+                <Button Width="100" Height="100" Name="bntHome" Click="btnHome_Click" >
                     <Image Source="/Assets/Home.png" Stretch="UniformToFill"/>
                 </Button>
             </StackPanel>
