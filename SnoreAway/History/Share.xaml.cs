@@ -77,7 +77,7 @@ namespace SnoreAway.History
 
                 using (var sleepClient = new HttpClient())
                 {
-                    sleepClient.BaseAddress = new Uri("http://127.0.0.1:3000/");
+                    sleepClient.BaseAddress = new Uri("https://snoreaway.herokuapp.com/");
                     var content = new FormUrlEncodedContent(values
                     );
                     var result = await sleepClient.PostAsync("/PostSession", content);
