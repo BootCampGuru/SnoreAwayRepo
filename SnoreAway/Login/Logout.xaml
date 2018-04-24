@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid  Background="SeaGreen">
+    <Grid  Background="#00B993">
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
             <TextBlock HorizontalAlignment="Center" Foreground="Orange" FontSize="36" Text="Thank you for using Snore Away" />

@@ -63,7 +63,8 @@ namespace SnoreAway.History
             DatabaseHelperClass Db_Helper = new DatabaseHelperClass();
             var session = Db_Helper.ReadSession(App.SessionId);
   
-
+            // Upload the meta data associated with the sleep session. Use public key of the provider to encrypt the data before sending it over 
+            // Upload the file to the S3 server and provide the server location
             try
             {
 

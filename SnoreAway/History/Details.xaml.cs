@@ -78,9 +78,9 @@ Windows.Storage.ApplicationData.Current.LocalFolder;
 
             if(session != null)
             {
-                StartTime.Text = session.StartTime != null ? session.StartTime : "";
-                EndTime.Text = session.EndTime != null ? session.EndTime : "";
-                Duration.Text = session.Duration != null ? session.Duration : "";
+                StartTime.Text = session.StartTime != null ? "Sleep Start Time :" + session.StartTime : "";
+                EndTime.Text = session.EndTime != null ? "Sleep End Time :" + session.EndTime : "";
+                Duration.Text = session.Duration != null ? "Sleep Duration :" +  session.Duration : "";
             }
 
 

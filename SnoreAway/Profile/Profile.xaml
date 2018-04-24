@@ -7,9 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollViewer>
-        <Grid Background="black">
+        <Grid Background="#020623">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel Background="red">
+                <StackPanel Background="#52eb7b">
                     <Button Width="100" Height="100" Name="bntHome" Click="btnHome_Click" >
                         <Image Source="/Assets/Home.png" HorizontalAlignment="Left"/>
                     </Button>
